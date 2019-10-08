@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <phila-header app-title="Inmate Locator"/>
+    <phila-header app-title="App Title"/>
     <main class="container main">
       <router-view />
     </main>
