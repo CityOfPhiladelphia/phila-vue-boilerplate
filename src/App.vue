@@ -1,30 +1,24 @@
 <template>
   <div id="app">
-    <phila-header app-title="App Title"/>
+    <phl-header app-title="App Title" />
     <main class="container main">
-      <router-view />
+      // Main Content
     </main>
-    <phila-footer />
+    <phl-footer />
   </div>
-
 </template>
 
 <script>
-
 import Footer from './components/Footer';
-import Header from './phila-ui/components/Header';
 
 export default {
   name: 'App',
   components: {
-    PhilaHeader: Header,
-    PhilaFooter: Footer,
+    PhlFooter: Footer,
   },
 };
 </script>
 
 <style lang="scss">
-
 @import "./assets/scss/main.scss";
-
 </style>
