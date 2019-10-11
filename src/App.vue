@@ -1,24 +1,24 @@
 <template>
   <div id="app">
-    <phl-header app-title="App Title" />
+    <app-header app-title="App Title" />
     <main class="container main">
-      // Main Content
+      <my-component />
     </main>
-    <phl-footer />
+    <app-footer />
   </div>
 </template>
 
 <script>
-import Footer from './components/Footer';
+import MyComponent from './components/MyComponent';
 
 export default {
   name: 'App',
   components: {
-    PhlFooter: Footer,
+    MyComponent,
   },
 };
 </script>
 
 <style lang="scss">
-@import "./assets/scss/main.scss";
+  @import "./assets/scss/main.scss";
 </style>

@@ -10,6 +10,7 @@
   "dependencies": {
     "bulma": "^0.7.5",
     "core-js": "^2.6.5",
+    "phila-ui": "github:CityOfPhiladelphia/phila-ui#master",
     "vue": "^2.6.10"
   },
   "devDependencies": {
