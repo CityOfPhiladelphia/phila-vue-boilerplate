@@ -1,1 +1,11 @@
 // Customm Local CSS
+@import "@CityOfPhiladelphia/phila-ui/src/styles/variables.scss";
+
+$modal-card-head-padding: 10px;
+$modal-card-body-padding: 10px;
+$family-sans-serif: 'Open Sans', sans-serif;
+$title-family: 'Montserrat', sans-serif;
+$subtitle-family: 'Montserrat', sans-serif;
+
+@import "bulma/bulma.sass";
+@import "@CityOfPhiladelphia/phila-ui/src/styles/base.scss";
