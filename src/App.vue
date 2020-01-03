@@ -6,10 +6,44 @@
     >
       <template v-slot:mobile-menu>
         <mobile-menu>
-          <!-- Mobile Menu Goes Here -->
+          <div class="navbar-item">
+            <a
+              href=""
+              class="button"
+            >Link 1</a>
+          </div>
+          <div class="navbar-item">
+            <a
+              href=""
+              class="button"
+            >Link 2</a>
+          </div>
+          <div class="navbar-item">
+            <a
+              href=""
+              class="button"
+            >Link 3</a>
+          </div>
         </mobile-menu>
       </template>
-      <!-- Regular Desktop Menu Goes Here -->
+      <div class="navbar-item">
+        <a
+          href=""
+          class="button"
+        >Link 1</a>
+      </div>
+      <div class="navbar-item">
+        <a
+          href=""
+          class="button"
+        >Link 2</a>
+      </div>
+      <div class="navbar-item">
+        <a
+          href=""
+          class="button"
+        >Link 3</a>
+      </div>
     </app-header>
     <main class="container main">
       <my-component />
