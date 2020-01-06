@@ -3,8 +3,8 @@ module.exports = {
     loaderOptions: {
       sass: {
         data: `
-          @import "~phila-ui/src/styles/functions.scss";
-          @import "~phila-ui/src/styles/colors.scss";
+          @import "~@phila/phila-ui/src/styles/functions.scss";
+          @import "~@phila/phila-ui/src/styles/colors.scss";
         `,
       },
     },
