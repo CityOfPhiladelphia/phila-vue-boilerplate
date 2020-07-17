@@ -1,85 +1,95 @@
 <template>
   <div class="columns is-multiline is-centered">
-    <div class="column is-8">
-      <input-form>
+    <div class="column is-5">
+      <h3 class="is-size-4 title">
+        Registration Form
+      </h3>
+      <vee-input-form>
         <fieldset>
-          <legend>Your name:</legend>
+          <legend>Your profile information</legend>
+          <div class="field">
+            <vee-textbox
+              v-model="firstName"
+              placeholder="First name"
+              required
+            />
+          </div>
+          <div class="field">
+            <vee-textbox
+              v-model="lastName"
+              placeholder="Last name"
+              required
+            />
+          </div>
+          <div class="field">
+            <vee-textbox
+              v-model="streetAddress"
+              placeholder="Street address"
+              required
+            />
+          </div>
+          <div class="field">
+            <vee-textbox
+              v-model="city"
+              placeholder="City"
+              required
+            />
+          </div>
           <div class="columns is-gapless">
-            <div class="column is-half">
-              <div class="field">
-                <vee-textbox
-                  v-model="field1"
-                  label="eager"
-                  placeholder="First Name"
-                  rules="email"
-                  mode="eager"
-                />
-              </div>
+            <div class="column is-two-thirds">
+              <vee-dropdown
+                v-model="state"
+                :options="states"
+                placeholder="State"
+                required
+              />
             </div>
-            <div class="column is-half">
+            <div class="column is-one-third">
               <div class="field">
                 <vee-textbox
-                  v-model="field2"
-                  label="eager"
-                  placeholder="Last Name"
-                  rules="email"
-                  mode="eager"
+                  v-model="zip"
+                  placeholder="Zip code"
+                  required="numeric"
                 />
               </div>
             </div>
           </div>
         </fieldset>
         <fieldset>
-          <legend>Your address:</legend>
-          <div class="columns is-multiline is-gapless">
-            <div class="column is-full">
-              <div class="field">
-                <vee-textbox
-                  v-model="field1"
-                  label="eager"
-                  placeholder="Street"
-                  rules="email"
-                  mode="eager"
-                />
-              </div>
-            </div>
-            <div class="column is-full">
-              <div class="field">
-                <vee-textbox
-                  v-model="field2"
-                  label="eager"
-                  placeholder="Street 2"
-                  rules="email"
-                  mode="eager"
-                />
-              </div>
-            </div>
-            <div class="column is-half">
-              <div class="field">
-                <vee-textbox
-                  v-model="field2"
-                  label="eager"
-                  placeholder="City"
-                  rules="email"
-                  mode="eager"
-                />
-              </div>
-            </div>
-            <div class="column is-half">
-              <div class="field">
-                <vee-dropdown
-                  v-model="field5"
-                  placeholder="State"
-                  :options="field5Options"
-                  label="eager"
-                  rules="required"
-                  mode="eager"
-                />
-              </div>
-            </div>
+          <legend>Your login Information</legend>
+          <div class="field">
+            <vee-textbox
+              v-model="email"
+              placeholder="E-mail"
+              required
+              rules="email"
+            />
+          </div>
+          <div class="is-field-info-important">
+            <b>Password</b> must be 12 characters long and contain at least:<br>
+            - one upper case (A-Z)<br>
+            - one lower case (a-z)<br>
+            - one number (0-9)<br>
+            - one special character (e.g. !@#$)
+          </div>
+          <div class="field">
+            <vee-textbox
+              v-model="password"
+              type="password"
+              placeholder="Password"
+              required
+            />
           </div>
         </fieldset>
-      </input-form>
+        <div class="field">
+          <checkbox
+            v-model="agreement"
+            :options="agreementOptions"
+            label="Terms & Conditions"
+            desc="You must agree to a whole bunch of things by clicking the checkbox below."
+          />
+        </div>
+      </vee-input-form>
     </div>
   </div>
 </template>
@@ -88,45 +98,25 @@
 export default {
   data () {
     return {
-      validation: false,
-      field1: '',
-      field2: '',
-      field3: '',
-      field4: '',
-      field5: '',
-      field5Options: [
-        "Option 1",
-        "Option 2",
-        "Option 3",
+      firstName: "",
+      lastName: "",
+      streetAddress: "",
+      city: "",
+      state: "",
+      states: [
+        "PA",
+        "Not PA",
       ],
-      field6: '',
-      field6Options: [
-        "Option 1",
-        "Option 2",
-        "Option 3",
-      ],
-      field7: '',
-      field7Options: [
-        "Option 1",
-        "Option 2",
-        "Option 3",
-      ],
-      field8: '',
-      field8Options: [
-        "Option 1",
-        "Option 2",
-        "Option 3",
-      ],
-      submit: '',
+      zip: "",
+      email: "",
+      password: "",
+      agreement: [],
+      agreementOptions: {
+        "yes": "if I must",
+      },
     };
   },
   methods: {
-    async validateThis () {
-      let valid = await this.$refs['rf'].validate();
-    },
-    submitIt() {
-      this.submit = 'All Done';
-    },
   },
 };
 </script>

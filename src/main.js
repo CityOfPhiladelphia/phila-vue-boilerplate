@@ -3,12 +3,13 @@ import App from './App.vue';
 import router from './router';
 import * as PhilaUI from '@phila/phila-ui';
 import { ValidationProvider, ValidationObserver, extend } from 'vee-validate';
-import { required, email, length, min } from 'vee-validate/dist/rules';
+import { required, email, length, min, numeric } from 'vee-validate/dist/rules';
 
 Vue.component('ValidationProvider', ValidationProvider);
 Vue.component('ValidationObserver', ValidationObserver);
 
 extend('email', email);
+extend('numeric', numeric);
 extend('length', length);
 extend('min', min);
 extend('min_array_length', {
