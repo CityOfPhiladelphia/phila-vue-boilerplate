@@ -6,12 +6,17 @@
     >
       <div class="navbar-item">
         <router-link :to="{ name: 'form1' }">
-          Form
+          Form 1
         </router-link>
       </div>
       <div class="navbar-item">
         <router-link :to="{ name: 'form2' }">
-          Form + Validation
+          Form 2
+        </router-link>
+      </div>
+      <div class="navbar-item">
+        <router-link :to="{ name: 'form3' }">
+          Form 3
         </router-link>
       </div>
     </app-header>
