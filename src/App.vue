@@ -19,6 +19,16 @@
           Form 3
         </router-link>
       </div>
+      <div class="navbar-item">
+        <router-link :to="{ name: 'styles' }">
+          Styles
+        </router-link>
+      </div>
+      <div class="navbar-item">
+        <router-link :to="{ name: 'content' }">
+          Content
+        </router-link>
+      </div>
     </app-header>
     <main class="container main">
       <router-view />

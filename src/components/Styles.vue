@@ -1,129 +1,368 @@
 <template>
-  <div class="section">
+  <div class="section content">
     <div class="columns is-multiline">
-      <div class="column is-5">
-        <button class="button">
-          Primary Button
-        </button><br><br>
-        <button class="button is-secondary is-simple">
-          Secondary Button
-        </button><br><br>
-        <button class="button">
-          <span class="icon"><i class="fa fa-plus" /></span>
-          <span>Primary Icon before</span>
-        </button><br><br>
-        <button class="button is-secondary">
-          <span class="icon"><i class="fa fa-plus" /></span>
-          <span>Secondary Icon before</span>
-        </button><br><br>
-        <button class="button">
-          <span>Primary Icon after</span>
-          <span class="icon"><i class="fa fa-plus" /></span>
-        </button><br><br>
-        <button class="button is-secondary">
-          <span>Secondary Icon after</span>
-          <span class="icon"><i class="fa fa-plus" /></span>
-        </button><br>
-        <ValidationObserver v-slot="validation">
-          <input-form
-            :validation="validation"
-            @submit.prevent="onSubmit"
+      <div class="column">
+        <h2 class="is-size-1">
+          Button Styles
+        </h2>
+        <h3 class="is-size-2">
+          Primary Buttons
+        </h3>
+        <div class="buttons">
+          <button class="button is-primary is-small">
+            Small
+          </button>
+          <button class="button is-primary">
+            Normal
+          </button>
+          <button class="button is-primary is-large">
+            Large
+          </button>
+        </div>
+        <div class="buttons">
+          <button
+            class="button is-primary"
+            disabled
           >
-            <fieldset>
-              <legend>Contact Information</legend>
-              <div class="field">
-                <div class="control">
-                  <vee-textbox
-                    v-model="textboxvalue"
-                    required
-                    mode="eager"
-                    name="First Name"
-                    rules="required"
-                  />
-                </div>
-              </div>
-              <div class="field">
-                <div class="control">
-                  <vee-textbox
-                    v-model="textboxvalue2"
-                    required
-                    rules="required"
-                  />
-                </div>
-              </div>
-              <div class="is-input-instructions" />
-              <div class="field">
-                <vee-radio
-                  v-model="radioGroupSave"
-                  :options="{ 'Residential': 'Residential', 'Daycare': 'Daycare', 'Something': 'Something' }"
-                  class="is-grouped radio-wrap required"
-                  required
-                  rules="required"
-                  num-of-columns="2"
-                >
-                  <template v-slot:group-label>
-                    Select an option below
-                  </template>
-                </vee-radio>
-              </div>
-
-              <div class="field">
-                <div class="control">
-                  <vee-dropdown
-                    v-model="selectedValue"
-                    :options="{ three: 'O2ne', tweo: 'Twdo'}"
-                    default-option="Age"
-                    required
-                    rules="required"
-                  />
-                </div>
-              </div>
-            </fieldset>
-            <fieldset>
-              <legend>Contact Information</legend>
-              <div class="field">
-                <div class="control">
-                  <vee-text-area
-                    v-model="textareaValue"
-                    required
-                    placeholder="Hello"
-                    rules="required|email"
-                  />
-                </div>
-              </div>
-              <div class="field">
-                <div class="control">
-                  <!-- <text-area /> -->
-                </div>
-              </div>
-              <div class="field">
-                <vee-checkbox
-                  v-model="checkboxValue"
-                  :options="{ 'Residential': 'Residential', 'Daycare': 'Daycare', 'Something': 'Something' }"
-                  num-of-columns="2"
-                  required
-                  rules="required|min_array_length:2"
-                >
-                  <template v-slot:group-label>
-                    Select an option below
-                  </template>
-                  <template v-slot:group-desc>
-                    Do something
-                  </template>
-                </vee-checkbox>
-              </div>
-            </fieldset>
-            <template v-slot:submit>
-              <button
-                type="submit"
-                @click.prevent="validation.validate"
-              >
-                Submit
-              </button>
-              <template />
-            </template>
-          </input-form>
-        </ValidationObserver>
+            Disabled
+          </button>
+          <button
+            class="button is-primary"
+            disabled
+          >
+            <span>Icon Right</span>
+            <span class="icon is-small">
+              <i class="fas fa-plus-square" />
+            </span>
+          </button>
+        </div>
+        <div class="buttons">
+          <button
+            class="button is-primary"
+          >
+            <span>Icon Right</span>
+            <span class="icon is-small">
+              <i class="fas fa-plus-square" />
+            </span>
+          </button>
+          <button
+            class="button is-primary"
+          >
+            <span class="icon is-small">
+              <i class="fas fa-check" />
+            </span>
+            <span>Icon Left</span>
+          </button>
+        </div>
+        <h3 class="is-size-2">
+          Secondary Buttons
+        </h3>
+        <div class="buttons">
+          <button class="button is-secondary is-small">
+            Small
+          </button>
+          <button class="button is-secondary">
+            Normal
+          </button>
+          <button class="button is-secondary is-large">
+            Large
+          </button>
+        </div>
+        <div class="buttons">
+          <button
+            class="button is-secondary"
+            disabled
+          >
+            Disabled
+          </button>
+          <button
+            class="button is-secondary"
+            disabled
+          >
+            <span>Icon Right</span>
+            <span class="icon is-small">
+              <i class="fas fa-plus-square" />
+            </span>
+          </button>
+        </div>
+        <div class="buttons">
+          <button
+            class="button is-secondary"
+          >
+            <span>Icon Right</span>
+            <span class="icon is-small">
+              <i class="fas fa-plus-square" />
+            </span>
+          </button>
+          <button
+            class="button is-secondary"
+          >
+            <span class="icon is-small">
+              <i class="fas fa-check" />
+            </span>
+            <span>Icon Left</span>
+          </button>
+        </div>
+        <h3 class="is-size-2">
+          Call to Action / Submit Buttons
+        </h3>
+        <div class="buttons">
+          <button class="button is-link is-cta">
+            Text
+          </button>
+          <button class="button is-secondary is-cta">
+            Secondary
+          </button>
+          <button class="button is-cta">
+            Primary
+          </button>
+        </div>
+        <div class="buttons">
+          <button
+            class="button is-link is-cta"
+            disabled
+          >
+            Disabled Text
+          </button>
+          <button
+            class="button is-secondary is-cta"
+            disabled
+          >
+            Disabled Secondary
+          </button>
+          <button
+            class="button is-cta"
+            disabled
+          >
+            Disabled Primary
+          </button>
+        </div>
+        <h3 class="is-size-2">
+          Link/Text Buttons
+        </h3>
+        <div class="buttons">
+          <button class="button is-link is-small">
+            Small
+          </button>
+          <button class="button is-link">
+            Normal
+          </button>
+          <button class="button is-link is-large">
+            Large
+          </button>
+        </div>
+        <div class="buttons">
+          <button
+            class="button is-link"
+            disabled
+          >
+            Disabled
+          </button>
+          <button
+            class="button is-link"
+            disabled
+          >
+            <span>Icon Right</span>
+            <span class="icon is-small">
+              <i class="fas fa-plus-square" />
+            </span>
+          </button>
+        </div>
+        <div class="buttons">
+          <button
+            class="button is-link"
+          >
+            <span>Icon Right</span>
+            <span class="icon is-small">
+              <i class="fas fa-plus-square" />
+            </span>
+          </button>
+          <button
+            class="button is-link"
+          >
+            <span class="icon is-small">
+              <i class="fas fa-check" />
+            </span>
+            <span>Icon Left</span>
+          </button>
+        </div>
+        <h3 class="is-size-2">
+          Destructive Buttons
+        </h3>
+        <div class="buttons">
+          <button class="button is-danger is-small">
+            Small
+          </button>
+          <button class="button is-danger">
+            Normal
+          </button>
+          <button class="button is-danger is-large">
+            Large
+          </button>
+        </div>
+        <div class="buttons">
+          <button
+            class="button is-danger"
+            disabled
+          >
+            Disabled
+          </button>
+          <button
+            class="button is-danger"
+            disabled
+          >
+            <span>Icon Right</span>
+            <span class="icon is-trash">
+              <i class="fas fa-plus-square" />
+            </span>
+          </button>
+        </div>
+        <div class="buttons">
+          <button
+            class="button is-danger"
+          >
+            <span>Icon Right</span>
+            <span class="icon is-trash">
+              <i class="fas fa-plus-square" />
+            </span>
+          </button>
+          <button
+            class="button is-danger"
+          >
+            <span class="icon is-small">
+              <i class="fas fa-times" />
+            </span>
+            <span>Icon Left</span>
+          </button>
+        </div>
+        <h2 class="is-size-1">
+          Typography
+        </h2>
+        <div>
+          <h3 class="is-size-2">
+            Simple Headers
+          </h3>
+          <h2 class="is-size-1">
+            Heading size 1
+          </h2>
+          <h2 class="is-size-2">
+            Heading size 2
+          </h2>
+          <h3 class="is-size-3">
+            Heading size 3
+          </h3>
+          <h4 class="is-size-4">
+            Heading size 4
+          </h4>
+        </div>
+        <hr>
+        <h2 class="is-size-2">
+          Custom Headers
+        </h2>
+        <div>
+          <h1 class="is-size-1 heading-with-background">
+            Heading 1 with background
+          </h1>
+          <h2 class="is-size-2 heading-with-background">
+            Heading 2 with background
+          </h2>
+          <h3 class="is-size-3 heading-with-background">
+            Heading 3 with background
+          </h3>
+          <h4 class="is-size-4 heading-with-background">
+            Heading 4 with background
+          </h4>
+        </div>
+        <div>
+          <h1 class="is-size-1 heading-with-contrast">
+            Heading 1 with background
+          </h1>
+          <h2 class="is-size-2 heading-with-contrast">
+            Heading 2 with background
+          </h2>
+          <h3 class="is-size-3 heading-with-contrast">
+            Heading 3 with background
+          </h3>
+          <h4 class="is-size-4 heading-with-contrast">
+            Heading 4 with background
+          </h4>
+        </div>
+        <hr>
+        <div>
+          <h2 class="is-size-2">
+            Titles over subtitles
+          </h2>
+          <div>
+            <h1 class="title is-1">
+              Title Heading 1
+            </h1>
+            <div class="subtitle is-1">
+              Matching Subtitle 1
+            </div>
+          </div>
+          <div>
+            <h2 class="title is-2">
+              Title Heading 2
+            </h2>
+            <div class="subtitle is-2">
+              Matching Subtitle 2
+            </div>
+          </div>
+          <div>
+            <h3 class="title is-3">
+              Title Heading 3
+            </h3>
+            <div class="subtitle is-3">
+              Matching Subtitle 3
+            </div>
+          </div>
+          <div>
+            <h4 class="title is-4">
+              Title Heading 4
+            </h4>
+            <div class="subtitle is-4">
+              Matching Subtitle 4
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div>
+          <h2 class="is-size-2">
+            Subtitles over Titles
+          </h2>
+          <div>
+            <div class="subtitle is-1">
+              Subtitle 1
+            </div>
+            <h1 class="title is-1">
+              Matching Title 1
+            </h1>
+          </div>
+          <div>
+            <div class="subtitle is-2">
+              Subtitle 2
+            </div>
+            <h2 class="title is-2">
+              Matching Title 2
+            </h2>
+          </div>
+          <div>
+            <div class="subtitle is-3">
+              Subtitle 3
+            </div>
+            <h3 class="title is-3">
+              Matching Title 3
+            </h3>
+          </div>
+          <div>
+            <div class="subtitle is-4">
+              Subtitle 4
+            </div>
+            <h4 class="title is-4">
+              Matching Title 4
+            </h4>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -133,20 +372,9 @@
 export default {
   data () {
     return {
-      textboxvalue: '',
-      textboxvalue2: '',
-      selectedValue: '',
-      checkboxValue: [],
-      checkboxValue2: [],
-      radioGroupSave: '',
-      radioGroupSave2: '',
-      textareaValue: '',
     };
   },
   methods: {
-    onSubmit() {
-      console.log('done');
-    },
   },
 };
 </script>
