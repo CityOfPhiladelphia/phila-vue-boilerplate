@@ -104,12 +104,65 @@
           </button>
         </div>
         <h3 class="is-size-2">
+          Tertiary Buttons
+        </h3>
+        <div class="buttons">
+          <button class="button is-tertiary is-small">
+            Small
+          </button>
+          <button class="button is-tertiary">
+            Normal
+          </button>
+          <button class="button is-tertiary is-large">
+            Large
+          </button>
+        </div>
+        <div class="buttons">
+          <button
+            class="button is-tertiary"
+            disabled
+          >
+            Disabled
+          </button>
+          <button
+            class="button is-tertiary"
+            disabled
+          >
+            <span>Icon Right</span>
+            <span class="icon is-small">
+              <i class="fas fa-plus-square" />
+            </span>
+          </button>
+        </div>
+        <div class="buttons">
+          <button
+            class="button is-tertiary"
+          >
+            <span>Icon Right</span>
+            <span class="icon is-small">
+              <i class="fas fa-plus-square" />
+            </span>
+          </button>
+          <button
+            class="button is-tertiary"
+          >
+            <span class="icon is-small">
+              <i class="fas fa-check" />
+            </span>
+            <span>Icon Left</span>
+          </button>
+        </div>
+        <h3 class="is-size-2">
           Call to Action / Submit Buttons
         </h3>
         <div class="buttons">
-          <button class="button is-link is-cta">
-            Text
+          <button
+            href="#"
+            class="button is-tertiary is-cta"
+          >
+            Tertiary
           </button>
+          &nbsp;&nbsp;&nbsp;
           <button class="button is-secondary is-cta">
             Secondary
           </button>
@@ -119,7 +172,7 @@
         </div>
         <div class="buttons">
           <button
-            class="button is-link is-cta"
+            class="button is-tertiary is-cta"
             disabled
           >
             Disabled Text
@@ -138,53 +191,108 @@
           </button>
         </div>
         <h3 class="is-size-2">
-          Link/Text Buttons
+          Link Styles
         </h3>
-        <div class="buttons">
-          <button class="button is-link is-small">
-            Small
-          </button>
-          <button class="button is-link">
-            Normal
-          </button>
-          <button class="button is-link is-large">
-            Large
-          </button>
+        <div class="level">
+          <div class="level-item">
+            <a
+              href="#"
+              class="is-link is-small"
+            >
+              Small Link Label
+            </a>
+          </div>
+          <div class="level-item">
+            <a
+              href="#"
+              class="is-link"
+            >
+              Normal Link Label
+            </a>
+          </div>
+          <div class="level-item">
+            <a
+              href="#"
+              class="is-link is-large"
+            >
+              Large Link Label
+            </a>
+          </div>
         </div>
-        <div class="buttons">
-          <button
-            class="button is-link"
-            disabled
-          >
-            Disabled
-          </button>
-          <button
-            class="button is-link"
-            disabled
-          >
-            <span>Icon Right</span>
-            <span class="icon is-small">
-              <i class="fas fa-plus-square" />
-            </span>
-          </button>
+        <h3 class="is-size-2">
+          Link Styles With Icons
+        </h3>
+        <div class="level">
+          <div class="level-item">
+            <a
+              href="#"
+              class="is-link is-small"
+            >
+              <span class="icon">
+                <i class="fas fa-pencil" />
+              </span>
+              <span>Small Icon Before</span>
+            </a>
+          </div>
+          <div class="level-item">
+            <a
+              href="#"
+              class="is-link is-small"
+            >
+              <span>Small Icon After</span>
+              <span class="icon">
+                <i class="fas  fa-external-link" />
+              </span>
+            </a>
+          </div>
         </div>
-        <div class="buttons">
-          <button
-            class="button is-link"
-          >
-            <span>Icon Right</span>
-            <span class="icon is-small">
-              <i class="fas fa-plus-square" />
-            </span>
-          </button>
-          <button
-            class="button is-link"
-          >
-            <span class="icon is-small">
-              <i class="fas fa-check" />
-            </span>
-            <span>Icon Left</span>
-          </button>
+        <div class="level">
+          <div class="level-item">
+            <a
+              href="#"
+              class="is-link"
+            >
+              <span class="icon">
+                <i class="fas fa-pencil" />
+              </span>
+              <span>Normal Icon Before</span>
+            </a>
+          </div>
+          <div class="level-item">
+            <a
+              href="#"
+              class="is-link"
+            >
+              <span>Normal Icon After</span>
+              <span class="icon">
+                <i class="fas  fa-external-link" />
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="level">
+          <div class="level-item">
+            <a
+              href="#"
+              class="is-link is-large"
+            >
+              <span class="icon">
+                <i class="fas  fa-pencil" />
+              </span>
+              <span>Large Icon Before</span>
+            </a>
+          </div>
+          <div class="level-item">
+            <a
+              href="#"
+              class="is-link is-large"
+            >
+              <span>Large Icon After</span>
+              <span class="icon">
+                <i class="fas  fa-external-link" />
+              </span>
+            </a>
+          </div>
         </div>
         <h3 class="is-size-2">
           Destructive Buttons
