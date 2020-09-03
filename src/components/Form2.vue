@@ -45,7 +45,9 @@
           placeholder="A Text-area field"
         />
         <template v-slot:submit>
-          <button>Submit</button>
+          <button class="button is-cta">
+            Submit
+          </button>
         </template>
       </input-form>
     </div>

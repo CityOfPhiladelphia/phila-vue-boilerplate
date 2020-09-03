@@ -45,7 +45,9 @@
           placeholder="A Text-area field"
         />
         <div class="form-submit form-padding has-text-centered">
-          <button>Submit</button>
+          <button class="button is-cta">
+            Submit
+          </button>
         </div>
       </form>
     </div>

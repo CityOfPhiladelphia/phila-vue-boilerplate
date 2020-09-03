@@ -1,5 +1,84 @@
 <template>
   <div class="section content">
+    <h2 class="is-size-1">
+      Main Colors
+    </h2>
+    <div class="columns">
+      <div class="column is-3 has-background-bell-yellow has-text-dark-grey has-text-centered">
+        bell-yellow
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-3 has-background-electric-blue has-text-dark-grey has-text-centered">
+        electric-blue
+      </div>
+      <div class="column is-3 has-background-ben-franklin-blue has-text-white has-text-centered">
+        ben-franklin-blue
+      </div>
+      <div class="column is-3 has-background-ben-franklin-blue-dark has-text-white has-text-centered">
+        ben-franklin-blue-dark
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-3 has-background-phanatic-green has-text-white has-text-centered">
+        phanatic-green
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-3 has-background-love-park-red has-text-white has-text-centered">
+        love-park-red-dark
+      </div>
+      <div class="column is-3 has-background-love-park-red-dark has-text-white has-text-centered">
+        love-park-red-dark
+      </div>
+    </div>
+    <h2 class="is-size-1">
+      Light (Background) Colors
+    </h2>
+    <div class="columns">
+      <div class="column is-3 has-background-bell-yellow-light has-text-dark-grey has-text-centered">
+        bell-yellow-light
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-3 has-background-ben-franklin-blue-light has-text-ben-franklin-blue-dark has-text-centered">
+        ben-franklin-blue-light
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-3 has-background-love-park-red-light has-text-love-park-red-dark has-text-centered">
+        love-park-red-light
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-3 has-background-phanatic-green-light has-text-phanatic-green-dark has-text-centered">
+        phanatic-green-light
+      </div>
+    </div>
+    <h2 class="is-size-1">
+      Callout
+    </h2>
+
+    <callout
+      message="Default message"
+    />
+    <callout
+      message="Info message"
+      class="is-info"
+    />
+    <callout
+      message="Success message"
+      class="is-success"
+    />
+    <callout
+      message="Warning message"
+      class="is-warning"
+    />
+    <callout
+      message="Danger message"
+      class="is-danger"
+    />
+
     <div class="columns is-multiline">
       <div class="column">
         <h2 class="is-size-1">

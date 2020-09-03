@@ -50,7 +50,9 @@
           :mode="validationMode !== '' ? validationMode : 'passive'"
         />
         <template v-slot:submit>
-          <button>Submit</button>
+          <button class="button is-cta">
+            Submit
+          </button>
         </template>
       </vee-input-form>
     </div>
