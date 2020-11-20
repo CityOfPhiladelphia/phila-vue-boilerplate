@@ -1,10 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Form1 from '@/components/Form1';
-import Form2 from '@/components/Form2';
-import Form3 from '@/components/Form3';
-import Styles from '@/components/Styles';
-import Content from '@/components/Content';
+import SampleComponent from './components/SampleComponent';
 
 Vue.use(Router);
 
@@ -14,28 +10,8 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'form1',
-      component: Form1,
-    },
-    {
-      path: '/form2',
-      name: 'form2',
-      component: Form2,
-    },
-    {
-      path: '/form3',
-      name: 'form3',
-      component: Form3,
-    },
-    {
-      path: '/styles',
-      name: 'styles',
-      component: Styles,
-    },
-    {
-      path: '/content',
-      name: 'content',
-      component: Content,
+      name: 'sample',
+      component: SampleComponent,
     },
   ],
 });
