@@ -5,10 +5,15 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "publish-dist": "npm run build && publish-dist"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@phila/phila-ui": "^1.7.1",
+=======
+    "@phila/phila-ui": "^1.8.0-beta.11",
+>>>>>>> f4a347ef6124c45a2c01111c3ce9985940c37adf
     "core-js": "^2.6.5",
     "vue": "^2.6.10",
     "vue-router": "^3.1.3"
@@ -36,11 +41,6 @@
     "rules": {},
     "parserOptions": {
       "parser": "babel-eslint"
-    }
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
     }
   },
   "browserslist": [
