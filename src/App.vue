@@ -2,7 +2,6 @@
   <div id="app">
     <app-header v-bind="options">
       <tabs-nav slot="tabs-nav">
-        <!-- <a href="#">Test</a> -->
         <router-link :to="{ name: 'form1' }">
           Form 1
         </router-link>
@@ -10,6 +9,11 @@
           Form 2
         </router-link>
       </tabs-nav>
+      <mobile-nav
+        slot="mobile-nav"
+        :links="links"
+      >
+      </mobile-nav>
     </app-header>
     <main id="main-content">
       <router-view />
@@ -18,19 +22,30 @@
 </template>
 
 <script>
-import { TabsNav } from '@phila/phila-ui';
+import { TabsNav, MobileNav } from '@phila/phila-ui';
 
 export default {
   name: 'App',
   components: {
     TabsNav,
+    MobileNav,
   },
   data () {
     return {
       options: {
         appTitle: 'title',
         appSubtitle: 'test',
-      }
+      },
+      links: [
+        {
+          text: 'Form 1',
+          href: 'form1',
+        },
+        {
+          text: 'Form 2',
+          href: 'form2',
+        },
+      ],
     };
   },
 };
