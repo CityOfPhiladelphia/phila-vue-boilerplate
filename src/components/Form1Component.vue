@@ -8,14 +8,14 @@
         <textbox
           v-model="textbox"
           placeholder="A Textbox input"
-          :required="validationSettings.includes('required') ? true : undefined"
-          :error="validationSettings.includes('errors') ? 'this field is invalid' : ''"
+          :required="validationSettings.indexOf('required') !== -1 ? true : undefined"
+          :error="validationSettings.indexOf('errors') !== -1 ? 'this field is invalid' : ''"
         />
         <dropdown
           v-model="dropdown"
           :options="dropdownOptions"
-          :required="validationSettings.includes('required') ? true : undefined"
-          :error="validationSettings.includes('errors') ? 'this field is invalid' : ''"
+          :required="validationSettings.indexOf('required') !== -1 ? true : undefined"
+          :error="validationSettings.indexOf('errors') !== -1 ? 'this field is invalid' : ''"
           placeholder="A dropdown field"
         />
         <div class="is-field-info-important">
@@ -24,15 +24,15 @@
         <checkbox
           v-model="checkbox"
           :options="checkboxOptions"
-          :required="validationSettings.includes('required') ? true : undefined"
-          :error="validationSettings.includes('errors') ? 'this field is invalid' : ''"
+          :required="validationSettings.indexOf('required') !== -1 ? true : undefined"
+          :error="validationSettings.indexOf('errors') !== -1 ? 'this field is invalid' : ''"
           label="A checkbox group"
         />
         <radio
           v-model="radio"
           :options="radioOptions"
-          :required="validationSettings.includes('required') ? true : undefined"
-          :error="validationSettings.includes('errors') ? 'this field is invalid' : ''"
+          :required="validationSettings.indexOf('required') !== -1 ? true : undefined"
+          :error="validationSettings.indexOf('errors') !== -1 ? 'this field is invalid' : ''"
           label="A radio group"
         />
         <div class="is-field-info">
@@ -40,8 +40,8 @@
         </div>
         <text-area
           v-model="textarea"
-          :required="validationSettings.includes('required') ? true : undefined"
-          :error="validationSettings.includes('errors') ? 'this field is invalid' : ''"
+          :required="validationSettings.indexOf('required') !== -1 ? true : undefined"
+          :error="validationSettings.indexOf('errors') !== -1 ? 'this field is invalid' : ''"
           placeholder="A Text-area field"
         />
         <div class="form-submit form-padding has-text-centered">
