@@ -10,12 +10,12 @@ const router = new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
+      path: '/sample1',
       name: 'sample',
       component: SampleComponent,
     },
     {
-      path: '/',
+      path: '/sample2',
       name: 'sample2',
       component: SampleComponent2,
     },

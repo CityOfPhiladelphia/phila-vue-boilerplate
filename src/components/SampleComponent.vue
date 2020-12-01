@@ -21,9 +21,9 @@
         <div class="is-field-info-important">
           Some importnant information about this field.
         </div>
-        <Checkbox
-          v-model="Checkbox"
-          :options="CheckboxOptions"
+        <checkbox
+          v-model="checkbox"
+          :options="checkboxOptions"
           :required="validationSettings.includes('required') ? true : undefined"
           :error="validationSettings.includes('errors') ? 'this field is invalid' : ''"
           label="A checkbox group"
@@ -50,7 +50,7 @@
       </form>
     </div>
     <div class="column is-4">
-      <Checkbox
+      <checkbox
         v-model="validationSettings"
         :options="settings"
         text-key="label"
@@ -61,7 +61,7 @@
       </h4>
       <b>textbox</b>: {{ textbox }}<br>
       <b>dropdown</b>: {{ dropdown }}<br>
-      <b>checkbox</b>: {{ Checkbox }}<br>
+      <b>checkbox</b>: {{ checkbox }}<br>
       <b>radio</b>: {{ radio }}<br>
       <b>textarea</b>: {{ textarea }}<br>
     </div>
@@ -69,13 +69,16 @@
 </template>
 <script>
 
-import { Checkbox } from '@phila/phila-ui';
-console.log('checkbox:', Checkbox);
+import { Checkbox, Textbox, Dropdown, Radio, TextArea } from '@phila/phila-ui';
 
 export default {
   name: 'SampleComponent',
   components: {
     Checkbox,
+    Textbox,
+    Dropdown,
+    Radio,
+    TextArea
   },
   data () {
     return {
@@ -97,8 +100,8 @@ export default {
         "Option 2",
         "Option 3",
       ],
-      Checkbox: [],
-      CheckboxOptions: [
+      checkbox: [],
+      checkboxOptions: [
         "Option 1",
         "Option 2",
         "Option 3",
