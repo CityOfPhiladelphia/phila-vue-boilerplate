@@ -3,11 +3,11 @@
     <app-header v-bind="options">
       <tabs-nav slot="tabs-nav">
         <!-- <a href="#">Test</a> -->
-        <router-link :to="{ name: 'sample' }">
-          My first tab
+        <router-link :to="{ name: 'form1' }">
+          Form 1
         </router-link>
-        <router-link :to="{ name: 'sample2' }">
-          My second tab
+        <router-link :to="{ name: 'form2' }">
+          Form 2
         </router-link>
       </tabs-nav>
     </app-header>

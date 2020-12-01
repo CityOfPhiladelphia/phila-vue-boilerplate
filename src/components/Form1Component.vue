@@ -72,7 +72,7 @@
 import { Checkbox, Textbox, Dropdown, Radio, TextArea } from '@phila/phila-ui';
 
 export default {
-  name: 'SampleComponent',
+  name: 'Form1Component',
   components: {
     Checkbox,
     Textbox,
