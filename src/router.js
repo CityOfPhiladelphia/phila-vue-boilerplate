@@ -56,6 +56,14 @@ export default new Router({
             label: 'Checkbox input',
           },
         },
+        {
+          path: "form",
+          name: "form",
+          component: () => import("@/components/examples/Form"),
+          meta: {
+            label: 'Form input',
+          },
+        },
       ],
     },
   ],
