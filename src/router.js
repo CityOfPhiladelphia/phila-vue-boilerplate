@@ -41,6 +41,14 @@ export default new Router({
           },
         },
         {
+          path: "app-header-with-nav",
+          name: "app-header-with-nav",
+          component: () => import("@/components/examples/AppHeaderWithNav"),
+          meta: {
+            label: 'Application Header with Navigation',
+          },
+        },
+        {
           path: "app-footer-1",
           name: "app-footer-1",
           component: () => import("@/components/examples/AppFooter1"),
@@ -86,6 +94,22 @@ export default new Router({
           component: () => import("@/components/examples/Full1"),
           meta: {
             label: 'Full example using all components',
+          },
+        },
+        {
+          path: 'form1',
+          name: 'form1',
+          component: () => import("@/components/examples/Form1Component"),
+          meta: {
+            label: 'Form example 1',
+          },
+        },
+        {
+          path: 'form2',
+          name: 'form2',
+          component: () => import("@/components/examples/Form2Component"),
+          meta: {
+            label: 'Form example 2',
           },
         },
       ],
