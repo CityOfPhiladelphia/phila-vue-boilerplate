@@ -1,56 +1,69 @@
 <template>
-  <ValidationObserver 
-    v-slot="{ errors }" 
-    tag="div" 
-  >
+  <ValidationObserver tag="div" v-slot="{ errors }">
     <input-form
-      title="My form title" 
+      title="Phila UI Form" 
       description="My form description"
       :errors="errors"
-      :required="true"
-      :error-messages="errors"
     >
-      <ValidationProvider
+      <vee-textbox 
+        v-model="myTextbox"
+        mode="eager"
         rules="required"
-        :error="validationSettings.includes('errors') ? 'this field is invalid' : ''"
+      />
+      <vee-checkbox 
+        v-model="values"
+        rules="required"
+        :options="options"
+        text-key="key1"
+        value-key="key2"
+        mode="eager"
+      />
+      <button 
+        class="is-cta button"
+        @click.prevent=""
       >
-        <textbox v-model="myTextbox" />
-        <button class="is-cta">
-          Submit
-        </button>
-      </ValidationProvider>
+        Submit
+      </button>
     </input-form>
   </ValidationObserver>
 </template>
 <script>
-import { InputForm, Textbox } from '@phila/phila-ui';
-import { ValidationProvider, ValidationObserver, extend } from 'vee-validate';
+import { InputForm, Textbox, Checkbox } from '@phila/phila-ui';
+
+//Import withValidation, ValidationObserver for the form, extend for the rules
+import { ValidationObserver, withValidation, extend } from 'vee-validate';
+
+//Import required rule and extend.
 import { required } from 'vee-validate/dist/rules';
 extend('required', {
   ...required,
   message: 'This field is required',
 });
+
+//Add validation to Textbox and Checkbox
+const VeeTextbox = withValidation(Textbox);
+const VeeCheckbox = withValidation(Checkbox);
+
 export default {
   components: {
     InputForm,
-    Textbox,
     ValidationObserver,
-    ValidationProvider,
+    VeeTextbox,
+    VeeCheckbox,
+
   },
   data () {
     return {
-      values: [],
-      validationSettings: [],
-      options: [],
       myTextbox: "",
-      settings: [
+      values: [],
+      options: [
         {
-          label: "Make all required",
-          key: "required",
+          'key1': 'My checkbox 1',
+          'key2': 'my-checkbox-value-1',
         },
         {
-          label: "Add errors",
-          key: "errors",
+          'key1': 'My checkbox 2',
+          'key2': 'my-checkbox-value-2',
         },
       ],
     };
