@@ -72,6 +72,14 @@ export default new Router({
             label: 'Radio',
           },
         },
+        {
+          path: "dropdown-1",
+          name: "dropdown-1",
+          component: () => import("@/components/examples/Dropdown1"),
+          meta: {
+            label: 'Dropdown',
+          },
+        },
       ],
     },
   ],
