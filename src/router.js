@@ -64,6 +64,14 @@ export default new Router({
             label: 'Form input',
           },
         },
+        {
+          path: "radio-1",
+          name: "radio-1",
+          component: () => import("@/components/examples/Radio1"),
+          meta: {
+            label: 'Radio',
+          },
+        },
       ],
     },
   ],
