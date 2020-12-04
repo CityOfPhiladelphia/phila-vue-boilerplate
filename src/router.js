@@ -33,6 +33,14 @@ export default new Router({
           },
         },
         {
+          path: "app-header-3",
+          name: "app-header-3",
+          component: () => import("@/components/examples/AppHeader3"),
+          meta: {
+            label: 'Application Header with tabbed navigation',
+          },
+        },
+        {
           path: "app-footer-1",
           name: "app-footer-1",
           component: () => import("@/components/examples/AppFooter1"),
@@ -49,11 +57,35 @@ export default new Router({
           },
         },
         {
+          path: "textbox-2",
+          name: "textbox-2",
+          component: () => import("@/components/examples/Textbox2"),
+          meta: {
+            label: 'Text input with validation',
+          },
+        },
+        {
           path: "checkbox-1",
           name: "checkbox-1",
           component: () => import("@/components/examples/Checkbox1"),
           meta: {
             label: 'Checkbox input',
+          },
+        },
+        {
+          path: "callout-1",
+          name: "callout-1",
+          component: () => import("@/components/examples/Callout1"),
+          meta: {
+            label: 'Callouts',
+          },
+        },
+        {
+          path: "full-1",
+          name: "full-1",
+          component: () => import("@/components/examples/Full1"),
+          meta: {
+            label: 'Full example using all components',
           },
         },
       ],

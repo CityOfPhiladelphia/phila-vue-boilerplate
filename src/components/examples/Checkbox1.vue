@@ -5,6 +5,7 @@
     text-key="key1"
     value-key="key2"
     :options="options"
+    num-of-columns="2"
   />
 </template>
 <script>
