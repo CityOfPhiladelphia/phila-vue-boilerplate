@@ -3,24 +3,29 @@
     <app-header
       app-title="My Application"
       app-subtitle="My application sub-title"
-      app-link="https://phila.gov"
+      app-link="/"
     >
       <tabs-nav 
         slot="tabs-nav" 
-        :links="myLinks" 
+        :links="links" 
       />
-      <!-- <dropdown-nav slot="dropdown-nav" :links="myLinks" />
-      <lang-selector slot="lang-selector-nav" :languages="myLanguages" />
-      <mobile-nav slot="mobile-nav" :links="myLinks" /> -->
+      <dropdown-nav 
+        slot="dropdown-nav" 
+        :links="dropdownLinks"
+      />
+      <!-- <lang-selector slot="lang-selector-nav" 
+        :languages="myLanguages" /> -->
     </app-header>
     <main />
   </div>
 </template>
 <script>
-import { AppHeader, TabsNav } from '@phila/phila-ui';
+import { AppHeader, TabsNav, DropdownNav } from '@phila/phila-ui';
 export default {
   components: {
     AppHeader,
+    TabsNav,
+    DropdownNav,
   },
   data () {
     return {
@@ -32,6 +37,29 @@ export default {
       brandingLink: {
         href: "https://www.phila.gov",
         target: "_blank",
+      },
+      links: [
+        {
+          text: 'Link 1',
+          href: 'examples',
+        },
+        {
+          text: 'Link 2',
+          href: '/examples/app-header-with-nav',
+        },
+      ],
+      dropdownLinks: {
+        button: "Options",
+        links: [
+          {
+            href: "profile",
+            text: "Profile",
+          },
+          {
+            href: "logout",
+            text: "Logout",
+          },
+        ],
       },
     };
   },

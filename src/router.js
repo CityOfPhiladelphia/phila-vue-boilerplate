@@ -33,6 +33,14 @@ export default new Router({
           },
         },
         {
+          path: "app-header-with-nav",
+          name: "app-header-with-nav",
+          component: () => import("@/components/examples/AppHeaderWithNav"),
+          meta: {
+            label: 'Application Header with Navigation',
+          },
+        },
+        {
           path: "app-footer-1",
           name: "app-footer-1",
           component: () => import("@/components/examples/AppFooter1"),
