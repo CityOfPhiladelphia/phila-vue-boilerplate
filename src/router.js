@@ -81,6 +81,30 @@ export default new Router({
           },
         },
         {
+          path: "radio-1",
+          name: "radio-1",
+          component: () => import("@/components/examples/Radio1"),
+          meta: {
+            label: 'Radio',
+          },
+        },
+        {
+          path: "dropdown-1",
+          name: "dropdown-1",
+          component: () => import("@/components/examples/Dropdown1"),
+          meta: {
+            label: 'Dropdown',
+          },
+        },
+        {
+          path: "text-area-1",
+          name: "text-area-1",
+          component: () => import("@/components/examples/TextArea1"),
+          meta: {
+            label: 'Text Area',
+          },
+        },
+        {
           path: "callout-1",
           name: "callout-1",
           component: () => import("@/components/examples/Callout1"),
@@ -112,6 +136,15 @@ export default new Router({
             label: 'Form example 2',
           },
         },
+        {
+          path: "form-1",
+          name: "form-1",
+          component: () => import("@/components/examples/Form1"),
+          meta: {
+            label: 'Form input',
+          },
+        },
+
       ],
     },
   ],
