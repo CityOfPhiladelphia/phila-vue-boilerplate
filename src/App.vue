@@ -22,19 +22,20 @@
 </template>
 
 <script>
-import { TabsNav, MobileNav } from '@phila/phila-ui';
+import { TabsNav, MobileNav, DropdownNav } from '@phila/phila-ui';
 
 export default {
   name: 'App',
   components: {
     TabsNav,
     MobileNav,
+    DropdownNav
   },
   data () {
     return {
       options: {
-        appTitle: 'title',
-        appSubtitle: 'test',
+        appTitle: "My custom app", 
+        appSubtitle: "Cool sub description",
       },
       links: [
         {
@@ -46,8 +47,18 @@ export default {
           href: 'form2',
         },
       ],
+      tabs: [
+        {
+          href: "/",
+          text: "link 1",
+          active: true,
+          attrs: {
+            name: "stuff",
+          }
+        }
+      ],
     };
-  },
+  }
 };
 </script>
 

@@ -1,13 +1,13 @@
-import Vue from 'vue';
-import Router from 'vue-router';
+import Vue from "vue";
+import Router from "vue-router";
+
 import Form1Component from './components/Form1Component';
 import Form2Component from './components/Form2Component';
 
 Vue.use(Router);
 
-const router = new Router({
-  mode: 'history',
-  base: process.env.BASE_URL,
+export default new Router({
+  mode: "history",
   routes: [
     {
       path: '/form1',
@@ -18,8 +18,64 @@ const router = new Router({
       path: '/form2',
       name: 'form2',
       component: Form2Component,
+      path: "/",
+      name: "home",
+      component: () => import("@/components/Home"),
+    },
+    {
+      path: "/examples",
+      name: "examples",
+      component: () => import("@/components/Examples"),
+      children: [
+        {
+          path: "app-header-1",
+          name: "app-header-1",
+          component: () => import("@/components/examples/AppHeader1"),
+          meta: {
+            label: 'Application Header basic',
+          },
+        },
+        {
+          path: "app-header-2",
+          name: "app-header-2",
+          component: () => import("@/components/examples/AppHeader2"),
+          meta: {
+            label: 'Application Header with Mobile Navigation',
+          },
+        },
+        {
+          path: "app-header-with-nav",
+          name: "app-header-with-nav",
+          component: () => import("@/components/examples/AppHeaderWithNav"),
+          meta: {
+            label: 'Application Header with Other Navigation',
+          },
+        },
+        {
+          path: "app-footer-1",
+          name: "app-footer-1",
+          component: () => import("@/components/examples/AppFooter1"),
+          meta: {
+            label: 'Application Footer with props',
+          },
+        },
+        {
+          path: "textbox-1",
+          name: "textbox-1",
+          component: () => import("@/components/examples/Textbox1"),
+          meta: {
+            label: 'Text input',
+          },
+        },
+        {
+          path: "checkbox-1",
+          name: "checkbox-1",
+          component: () => import("@/components/examples/Checkbox1"),
+          meta: {
+            label: 'Checkbox input',
+          },
+        },
+      ],
     },
   ],
 });
-
-export default router;
