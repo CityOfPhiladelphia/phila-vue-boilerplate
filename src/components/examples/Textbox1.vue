@@ -3,11 +3,10 @@
     v-model="value"
     placeholder="My placeholder"
     label="My Label"
-    icon="fa fa-search"
+    desc="Extra information about this field"
     :inner-label="true"
-    :is-loading="true"
-    :errors="['And you must do something']"
-  />
+  >
+  </textbox>
 </template>
 <script>
 import { Textbox } from '@phila/phila-ui';
