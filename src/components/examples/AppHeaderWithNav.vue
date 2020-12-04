@@ -4,14 +4,20 @@
       app-title="My Application"
       app-subtitle="My application sub-title"
       app-link="https://phila.gov"
-      :branding-image="brandingImage"
-      :branding-link="brandingLink"
-    />
+    >
+      <tabs-nav 
+        slot="tabs-nav" 
+        :links="myLinks" 
+      />
+      <!-- <dropdown-nav slot="dropdown-nav" :links="myLinks" />
+      <lang-selector slot="lang-selector-nav" :languages="myLanguages" />
+      <mobile-nav slot="mobile-nav" :links="myLinks" /> -->
+    </app-header>
     <main />
   </div>
 </template>
 <script>
-import { AppHeader } from '@phila/phila-ui';
+import { AppHeader, TabsNav } from '@phila/phila-ui';
 export default {
   components: {
     AppHeader,

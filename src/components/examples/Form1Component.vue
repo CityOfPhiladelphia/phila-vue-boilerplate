@@ -78,7 +78,7 @@ export default {
     Textbox,
     Dropdown,
     Radio,
-    TextArea
+    TextArea,
   },
   data () {
     return {

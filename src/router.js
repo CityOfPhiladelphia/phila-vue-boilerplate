@@ -1,23 +1,12 @@
 import Vue from "vue";
 import Router from "vue-router";
 
-import Form1Component from './components/Form1Component';
-import Form2Component from './components/Form2Component';
-
 Vue.use(Router);
 
 export default new Router({
   mode: "history",
   routes: [
     {
-      path: '/form1',
-      name: 'form1',
-      component: Form1Component,
-    },
-    {
-      path: '/form2',
-      name: 'form2',
-      component: Form2Component,
       path: "/",
       name: "home",
       component: () => import("@/components/Home"),
@@ -44,14 +33,6 @@ export default new Router({
           },
         },
         {
-          path: "app-header-with-nav",
-          name: "app-header-with-nav",
-          component: () => import("@/components/examples/AppHeaderWithNav"),
-          meta: {
-            label: 'Application Header with Other Navigation',
-          },
-        },
-        {
           path: "app-footer-1",
           name: "app-footer-1",
           component: () => import("@/components/examples/AppFooter1"),
@@ -73,6 +54,22 @@ export default new Router({
           component: () => import("@/components/examples/Checkbox1"),
           meta: {
             label: 'Checkbox input',
+          },
+        },
+        {
+          path: 'form1',
+          name: 'form1',
+          component: () => import("@/components/examples/Form1Component"),
+          meta: {
+            label: 'Form example 1',
+          },
+        },
+        {
+          path: 'form2',
+          name: 'form2',
+          component: () => import("@/components/examples/Form2Component"),
+          meta: {
+            label: 'Form example 2',
           },
         },
       ],
