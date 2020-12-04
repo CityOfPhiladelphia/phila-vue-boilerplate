@@ -57,9 +57,9 @@ export default new Router({
           },
         },
         {
-          path: "form",
-          name: "form",
-          component: () => import("@/components/examples/Form"),
+          path: "form-1",
+          name: "form-1",
+          component: () => import("@/components/examples/Form1"),
           meta: {
             label: 'Form input',
           },
