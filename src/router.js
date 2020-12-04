@@ -1,5 +1,12 @@
+<<<<<<< Updated upstream
 import Vue from "vue";
 import Router from "vue-router";
+=======
+import Vue from 'vue';
+import Router from 'vue-router';
+import SampleComponent from './components/SampleComponent';
+import SampleComponent2 from './components/SampleComponent2';
+>>>>>>> Stashed changes
 
 Vue.use(Router);
 
