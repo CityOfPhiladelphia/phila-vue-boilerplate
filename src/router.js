@@ -80,6 +80,14 @@ export default new Router({
             label: 'Dropdown',
           },
         },
+        {
+          path: "text-area-1",
+          name: "text-area-1",
+          component: () => import("@/components/examples/TextArea1"),
+          meta: {
+            label: 'Text Area',
+          },
+        },
       ],
     },
   ],
