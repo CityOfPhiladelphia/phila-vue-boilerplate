@@ -1,7 +1,5 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import SampleComponent from './components/SampleComponent';
-import SampleComponent2 from './components/SampleComponent2';
 
 Vue.use(Router);
 
@@ -11,13 +9,8 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'sample',
-      component: SampleComponent,
-    },
-    {
-      path: '/sample2',
-      name: 'sample2',
-      component: SampleComponent2,
+      name: 'home',
+      component: import("@/components/Home"),
     },
   ],
 });
