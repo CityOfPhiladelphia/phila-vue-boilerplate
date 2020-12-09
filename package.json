@@ -5,15 +5,12 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "publish-dist": "npm run build && publish-dist"
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "@phila/phila-ui": "^1.8.0",
     "core-js": "^2.6.5",
-    "vee-validate": "^3.4.5",
     "vue": "^2.6.10",
-    "vue-i18n": "^8.22.2",
     "vue-router": "^3.1.3"
   },
   "devDependencies": {
