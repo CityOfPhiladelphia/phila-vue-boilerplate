@@ -1,51 +1,33 @@
-# boilerplate phila-vue application
+# Phila-UI Boilerplate
+This boilerplate is intended to be used with [PhilaUI](https://github.com/CityOfPhiladelphia/phila-ui).
 
-## Project setup
-```
-npm install
-```
+## Usage
+Usage is devided by branch:
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### master
+Main template to start a new project from. Has PhilaUI as a dependency, a basic component and view with the default AppHeader config.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### beta
+New components that might be in PhilaUI in the future. Has the same config as master.
 
-### Run your tests
-```
-No test so far
-```
+**The beta branch deploys to S3 so it's easier to share updates to everyone.**
 
-### Lints and fixes files
-```
-npm run lint
-```
+### examples
+This branch has a growing list of PhilaUI examples, which is used by PhilaUI docs.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+**The examples branch deploys to S3**
 
-### Notes and Isntructions
+### next (wip)
+This branch will have the next approved releases of PhilaUI, safe to use in production for latest features.
 
-The components in this project were copied from phila-ui. (In the future this will be updated in the future with an NPM library.)
+## Install
+- ``git clone`` this repo
+- checkout one of the branches above
+- ``npm install`` to install dependencies
+- ``npm run serve`` to start local server
 
-Check if vue CLI is installed (if not then install it from https://cli.vuejs.org/)
+## Docs
+See [PhilaUI](https://d1m9pvzdejpqbs.cloudfront.net) docs for more information about PhilaUI.
 
-Check and install the latest version from the command prompt: npm install @vue/cli -g
-
-City standards for a new vue.js application: https://phila.city/display/appdev/Code+Style+Guidelines
-
-If you do not already have it installed, follow the link from the city standards site  for EditorConfg for VS Code and click install. 
-
-Run the following from your command prompt: 
-
-npm install bulma
-npm install --save-dev node-sass sass-loader
-
-[note: sass loader version has a bug/incompatibility with vue compiler, use version lower than 8.0.0 for now]
-
-
-For any new components, look to https://github.com/vuejs/awesome-vue and check to see if it is compatible with bulma (or how difficult it would be to change to be compatible)
+## Issues
+Only open boilerplate related issues on this repo. Issues related to PhilaUI should be opened in the [PhilaUI repo](https://github.com/CityOfPhiladelphia/phila-ui).
