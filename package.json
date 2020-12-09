@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "@phila/phila-ui": "^1.8.0",
-    "axios": "^0.21.0",
     "core-js": "^2.6.5",
     "vee-validate": "^3.4.5",
     "vue": "^2.6.10",
