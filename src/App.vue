@@ -1,10 +1,9 @@
 <template>
   <div id="app">
-    <app-header>
-      <main class="content">
-        <router-view />
-      </main>
-    </app-header>
+    <app-header />
+    <main class="content">
+      <router-view />
+    </main>
   </div>
 </template>
 
@@ -17,6 +16,9 @@ export default {
     AppHeader,
   },
   data () {
+    return {
+
+    };
   },
 };
 </script>

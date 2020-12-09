@@ -1,5 +1,11 @@
 <template>
   <div class="container">
-    App component
+    Application content...
   </div>
 </template>
+
+<script>
+export default {
+  name: "Home",
+};
+</script>

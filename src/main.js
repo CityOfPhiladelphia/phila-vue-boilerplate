@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
-import { ResponsiveHelper } from '@phila/phila-ui';
+import { ResponsiveHelpers } from '@phila/phila-ui';
 
-Vue.use(ResponsiveHelper);
+Vue.use(ResponsiveHelpers);
 
 new Vue({
   router,
