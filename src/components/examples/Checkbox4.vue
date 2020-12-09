@@ -7,6 +7,7 @@
           label="Label for all checkboxes in this group"
           desc="Description for all checkboxes in this group"
           :options="options"
+          errors="An example of an error message"
         />
         <pre>Selected option(s): {{ value }}</pre>
       </div>

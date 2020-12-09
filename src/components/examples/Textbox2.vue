@@ -1,27 +1,24 @@
 <template>
-  <textbox
-    v-model="value"
-    placeholder="My placeholder 2"
-    label="My Label"
-    icon="fa fa-search"
-    :inner-label="true"
-    :is-loading="true"
-    rules="required"
-    mode="aggressive"
-    name="field name"
-  />
+  <div class="container">
+    <div class="columns">
+      <div class="column is-half">
+        <textbox
+          v-model="value"
+          placeholder="Field placeholder"
+          label="Alternative label"
+          desc="Field description"
+          errors="An example of an error message"
+        />
+      </div>
+    </div>
+  </div>
 </template>
 <script>
 
-// import Vue from 'vue';
-// import { Textbox, Checkbox, addValidationTo } from '@phila/phila-ui';
-// import { withValidation } from 'vee-validate';
-
-// let VeeTextbox = withValidation(Textbox);
-
+import { Textbox } from '@phila/phila-ui';
 export default {
   components: {
-    // VeeTextbox,
+    Textbox,
   },
   data () {
     return {

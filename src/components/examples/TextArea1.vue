@@ -1,12 +1,16 @@
 <template>
-<text-area
-  v-model="myValue" 
-  placeholder="Type in this text area."
-  label="The label for the text area."
-  desc="This is the description of the text area."
-  :inner-label="true"
->
-</text-area>
+  <div class="container">
+    <div class="columns">
+      <div class="column is-half">
+        <text-area
+          v-model="value"
+          placeholder="Field placeholder"
+          label="Field label"
+          desc="Field description"
+        />
+      </div>
+    </div>
+  </div>
 </template>
 <script>
 import { TextArea } from '@phila/phila-ui';
@@ -16,7 +20,7 @@ export default {
   },
   data () {
     return {
-      myValues: "",
+      value: "",
     };
   },
 };

@@ -2,22 +2,22 @@
   <div class="container">
     <div class="columns">
       <div class="column is-half">
-        <textbox
+        <text-area
           v-model="value"
           placeholder="Field placeholder"
-          label="Alternative label"
+          label="Field label"
           desc="Field description"
+          errors="This field is invalid"
         />
       </div>
     </div>
   </div>
 </template>
 <script>
-
-import { Textbox } from '@phila/phila-ui';
+import { TextArea } from '@phila/phila-ui';
 export default {
   components: {
-    Textbox,
+    TextArea,
   },
   data () {
     return {

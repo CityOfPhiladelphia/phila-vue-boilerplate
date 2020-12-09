@@ -3,7 +3,9 @@
     <router-view />
     <div class="back-to">
       <router-link :to="{ name: 'home' }">
-        More examples
+        <button class="button is-secondary">
+          More examples
+        </button>
       </router-link>
     </div>
   </div>
@@ -14,7 +16,7 @@ export default {};
 <style scoped>
   .back-to {
     position: fixed;
-    bottom: 10px;
+    bottom: 100px;
     left: 50%;
     transform: translateX(-50%);
   }

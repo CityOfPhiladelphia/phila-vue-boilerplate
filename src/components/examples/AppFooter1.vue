@@ -1,23 +1,24 @@
 <template>
   <div>
+    <app-header />
+    <main>
+      AppHeader added for footer positioning purposes.
+    </main>
     <app-footer>
       <ul>
-        <li><a href="https://phila.gov">Phila.gov</a></li>
-        <li>
-          <router-link :to="{ name: 'home' }">
-            Home Page
-          </router-link>
-        </li>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
       </ul>
     </app-footer>
-    <main />
   </div>
 </template>
 <script>
-import { AppFooter } from '@phila/phila-ui';
+import { AppFooter, AppHeader } from '@phila/phila-ui';
 export default {
   components: {
     AppFooter,
+    AppHeader,
   },
 };
 </script>

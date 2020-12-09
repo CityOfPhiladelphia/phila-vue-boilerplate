@@ -5,8 +5,9 @@
         <textbox
           v-model="value"
           placeholder="Field placeholder"
-          label="Alternative label"
+          label="Field label"
           desc="Field description"
+          :inner-label="false"
         />
       </div>
     </div>

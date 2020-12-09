@@ -5,15 +5,15 @@
       app-subtitle="My application sub-title"
       app-link="/"
     >
-      <tabs-nav 
-        slot="tabs-nav" 
-        :links="links" 
+      <tabs-nav
+        slot="tabs-nav"
+        :links="links"
       />
-      <dropdown-nav 
-        slot="dropdown-nav" 
-        :links="dropdownLinks"
+      <dropdown-nav
+        slot="dropdown-nav"
+        :nav="dropdownLinks"
       />
-      <!-- <lang-selector slot="lang-selector-nav" 
+      <!-- <lang-selector slot="lang-selector-nav"
         :languages="myLanguages" /> -->
     </app-header>
     <main />
@@ -29,7 +29,7 @@ export default {
   },
   data () {
     return {
-      brandingImage: { 
+      brandingImage: {
         src: "https://www.phila.gov/assets/images/city-of-philadelphia-yellow-white.png",
         alt: "City of Philadelphia logo",
         width: "200px",

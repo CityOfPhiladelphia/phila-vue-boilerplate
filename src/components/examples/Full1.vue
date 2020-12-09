@@ -60,7 +60,7 @@
         </ul>
       </mobile-nav>
     </app-header>
-    <main>
+    <main class="container">
       <div class="content">
         <div class="columns is-multiline">
           <div class="column is-full">
@@ -70,6 +70,8 @@
             <div class="subtitle is-1">
               My page subtitle
             </div>
+            <br>
+            <p>Sample text to be translated: <strong>{{ $t("message.hello") }}</strong></p>
           </div>
           <div class="column is-half">
             <input-form
@@ -82,7 +84,7 @@
                 desc="Extra info about this field"
               />
               <checkbox
-                v-mode="checkboxValue"
+                v-model="checkboxValue"
                 :options="checkboxes"
                 label="My group of checkboxes"
                 desc="Extra info about these checkboxes"
@@ -116,9 +118,10 @@
                 placeholder="My textbox placeholder"
                 desc="Extra info about this field"
                 :inner-label="false"
+                errors="This field is required"
               />
               <checkbox
-                v-mode="checkboxValue"
+                v-model="checkboxValue"
                 :options="checkboxes"
                 label="My checkboxes label"
                 desc="Extra info about these checkboxes"
@@ -360,9 +363,41 @@
   </div>
 </template>
 <script>
-import Checkbox1 from "./Checkbox1.vue";
+import Vue from 'vue';
+import * as PhilaUI from '@phila/phila-ui';
+import VueI18n from "vue-i18n";
+
+Vue.use(VueI18n);
+Vue.use(PhilaUI);
+
+const i18n = new VueI18n({
+  locale: "en-US",
+  messages: {
+    "en-US": {
+      message: {
+        hello: 'Hello',
+      },
+    },
+    "es": {
+      message: {
+        hello: "Hola",
+      },
+    },
+    "it": {
+      message: {
+        hello: "Ciao",
+      },
+    },
+    "pt-BR": {
+      message: {
+        hello: "Olá",
+      },
+    },
+  },
+});
 
 export default {
+  i18n,
   data () {
     return {
       appHeader: {
@@ -378,11 +413,19 @@ export default {
       languages: [
         {
           language: 'en-US',
-          title: "English",
+          title: 'English',
         },
         {
           language: 'es',
-          title: "Spanish",
+          title: 'Spanish',
+        },
+        {
+          language: 'it',
+          title: 'Italian',
+        },
+        {
+          language: 'pt-BR',
+          title: 'Portuguese (Brazil)',
         },
       ],
       textboxValue: "",
@@ -423,6 +466,6 @@ export default {
 </script>
 <style>
   .back-to {
-    display: none !important;
+    display: none;
   }
 </style>

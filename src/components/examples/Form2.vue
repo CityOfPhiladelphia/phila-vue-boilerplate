@@ -3,7 +3,7 @@
     <div class="columns">
       <div class="column is-half">
         <ValidationObserver
-          v-slot="{ errors }"
+          v-slot="{ errors, handleSubmit }"
           tag="div"
         >
           <input-form
@@ -12,7 +12,7 @@
             :errors="errors"
           >
             <p class="is-field-info-important">
-              This form shows error counts as the user interacts with each field.
+              This form shows error counts only on submit.
             </p>
             <vee-textbox
               v-model="value1"
@@ -28,6 +28,13 @@
               required
               name="Last Name"
             />
+            <button
+              slot="submit"
+              class="is-cta button"
+              @click.prevent="handleSubmit(validateOnSubmit)"
+            >
+              Submit
+            </button>
           </input-form>
         </ValidationObserver>
       </div>
@@ -36,13 +43,16 @@
 </template>
 <script>
 import { InputForm, Textbox } from '@phila/phila-ui';
-import { ValidationObserver, withValidation, extend } from 'vee-validate';
+import { ValidationObserver, withValidation, extend, setInteractionMode } from 'vee-validate';
 
 import { required } from 'vee-validate/dist/rules';
 extend('required', {
   ...required,
   message: 'This field is required',
 });
+
+setInteractionMode('passive');
+
 
 const VeeTextbox = withValidation(Textbox);
 
@@ -57,6 +67,11 @@ export default {
       value1: "",
       value2: "",
     };
+  },
+  methods: {
+    validateOnSubmit () {
+      alert('Form has been submitted!');
+    },
   },
 };
 </script>

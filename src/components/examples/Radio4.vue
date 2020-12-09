@@ -2,27 +2,28 @@
   <div class="container">
     <div class="columns">
       <div class="column is-half">
-        <checkbox
+        <radio
           v-model="value"
-          label="Label for all checkboxes in this group"
-          desc="Description for all checkboxes in this group"
+          label="Label for all radio buttons in this group"
+          desc="Description for all radio buttons in this group"
           :options="options"
+          errors="An example of an error message"
         />
-        <pre>Selected option(s): {{ value }}</pre>
+        <pre>Selected option: {{ value }}</pre>
       </div>
     </div>
   </div>
 </template>
 <script>
 
-import { Checkbox } from '@phila/phila-ui';
+import { Radio } from '@phila/phila-ui';
 export default {
   components: {
-    Checkbox,
+    Radio,
   },
   data () {
     return {
-      value: [],
+      value: "",
       options: [
         "Option 1",
         "Option 2",

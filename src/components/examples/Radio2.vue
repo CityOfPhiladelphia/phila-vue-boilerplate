@@ -23,11 +23,11 @@ export default {
   data () {
     return {
       value: "",
-      options: [
-        "Option 1",
-        "Option 2",
-        "Option 3",
-      ],
+      options: {
+        "option-1": "Option 1",
+        "option-2": "Option 2",
+        "option-3": "Option 3",
+      },
     };
   },
 };
