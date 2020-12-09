@@ -5,17 +5,21 @@ This boilerplate is intended to be used with [PhilaUI](https://github.com/CityOf
 Usage is devided by branch:
 
 ### master
-Main template to start a new project from. Has PhilaUI as a dependency, a basic component and view with the default AppHeader config.
+Main template to start a new project from. Has PhilaUI as a dependency, a basic component and a view with the default AppHeader config.
 
 ### beta
 New components that might be in PhilaUI in the future. Has the same config as master.
 
-**The beta branch deploys to S3 so it's easier to share updates to everyone.**
+**The beta branch deploys to S3 so it's easier to share updates with everyone.**
+
+[Beta website](https://d3acfh7pw3cq6.cloudfront.net)
 
 ### examples
 This branch has a growing list of PhilaUI examples, which is used by PhilaUI docs.
 
 **The examples branch deploys to S3**
+
+[Examples website](https://d1ndb3f1jqxfee.cloudfront.net)
 
 ### next (wip)
 This branch will have the next approved releases of PhilaUI, safe to use in production for latest features.
