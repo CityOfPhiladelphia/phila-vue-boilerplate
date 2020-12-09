@@ -10,21 +10,7 @@ jobs:
     name: Build and Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: Set global variables for test/production
-      id: global-vars
-      run: |
-        if [[ ${{ github.ref}} = refs/heads/test ]];then
-          echo ::set-output name=aws_env_prefix::dev
-          echo ::set-output name=npm_build_env::test
-        else
-          echo ::set-output name=aws_env_prefix::prod
-          echo ::set-output name=npm_build_env::prod
-        fi
     - uses: actions/checkout@v1
-
-    - uses: webfactory/ssh-agent@v0.1.1
-      with:
-        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
     - name: Use Node.js 10.x
       uses: actions/setup-node@v1
@@ -34,7 +20,6 @@ jobs:
     - name: npm install, lint, and build
       run: |
         npm install
-        npm run lint
         npm run build --prod
 
     - name: Deploy to s3
@@ -43,4 +28,4 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: |
-        aws s3 sync dist s3://phila-ui-boilerplate-beta --region us-east-1 --delete
+        aws s3 sync dist s3://phila-ui-beta --region us-east-1 --delete
