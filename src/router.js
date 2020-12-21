@@ -111,7 +111,7 @@ export default new Router({
           name: "form-1",
           component: () => import("@/components/examples/Form1"),
           meta: {
-            label: 'with by field validation',
+            label: 'with validation on each field',
             category: "Inputs",
             component: "Form",
           },
@@ -121,7 +121,7 @@ export default new Router({
           name: "form-2",
           component: () => import("@/components/examples/Form2"),
           meta: {
-            label: 'with on submit validation',
+            label: 'with validation on submit',
             category: "Inputs",
             component: "Form",
           },
