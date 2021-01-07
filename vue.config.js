@@ -1,3 +1,5 @@
+const CopyPlugin = require("copy-webpack-plugin");
+
 module.exports = {
   css: {
     loaderOptions: {
@@ -8,5 +10,14 @@ module.exports = {
         `,
       },
     },
+  },
+  configureWebpack: {
+    plugins: [
+      new CopyPlugin({
+        patterns: [
+          { from: "src/components/examples", to: "examples" },
+        ],
+      }),
+    ],
   },
 };

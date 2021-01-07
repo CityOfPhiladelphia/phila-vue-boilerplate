@@ -12,6 +12,11 @@ export default new Router({
       component: () => import("@/components/Home"),
     },
     {
+      path: "/loader",
+      name: "loader",
+      component: () => import("@/components/ExamplesLoader"),
+    },
+    {
       path: "/examples",
       name: "examples",
       component: () => import("@/components/Examples"),
@@ -327,8 +332,8 @@ export default new Router({
           },
         },
         {
-          path: "callout-1",
-          name: "callout-1",
+          path: "Callout1",
+          name: "Callout1",
           component: () => import("@/components/examples/Callout1"),
           meta: {
             label: 'with custom types',
