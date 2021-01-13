@@ -1,23 +1,73 @@
 <template>
-  <div class="phila-ui-example-frame">
-    <div class="phila-ui-example-toolbar">
-      <button @click.prevent="paneSize=100">
-        Code
-      </button>
-      <button @click.prevent="paneSize=0">
-        Preview
-      </button>
-      <button @click.prevent="paneSize=50">
-        Split
-      </button>
+  <div
+    v-show="ready"
+    class="phila-ui-example-frame"
+  >
+    <div
+      v-if="hasBar"
+      class="phila-ui-example-toolbar"
+    >
+      <div
+        ref="buttons"
+        class="buttons"
+      >
+        <button
+          v-if="hasSplit"
+          id="split"
+          class="button is-tertiary is-small tab-btn"
+          title="code and preview"
+          @click.prevent="paneSize=50"
+        >
+          <i class="fas fa-columns" />
+        </button>
+        <button
+          v-if="hasPreview"
+          id="preview"
+          class="button is-tertiary is-small tab-btn"
+          title="preview"
+          @click.prevent="paneSize=0"
+        >
+          <i class="fas fa-eye" />
+        </button>
+        <button
+          v-if="hasCode"
+          id="code"
+          class="button is-tertiary is-small tab-btn"
+          title="view code"
+          @click.prevent="paneSize=100"
+        >
+          <i class="fas fa-code" />
+        </button>
+
+        <button
+          v-if="canCopy && hasCopy"
+          id="copy"
+          class="button is-tertiary is-small"
+          title="copy code"
+          @click.prevent="copy"
+        >
+          <i class="fas fa-copy" />
+        </button>
+        <button
+          v-if="hasFs"
+          id="new-window"
+          class="button is-tertiary is-small"
+          title="new window"
+          @click.prevent="goToExample"
+        >
+          <i class="far fa-external-link-square" />
+        </button>
+      </div>
     </div>
     <splitpanes
       class="default-theme"
       :horizontal="horizontal"
     >
       <pane
+        v-if="hasCode"
         ref="code-panel"
         :size="paneSize"
+        class="code-wrap"
       >
         <vue-code-highlight>
           {{ code.data }}
@@ -46,68 +96,116 @@ import '@/assets/css/prism-theme.css';
 import { Splitpanes, Pane } from 'splitpanes';
 import 'splitpanes/dist/splitpanes.css';
 
-import VueFriendlyIframe from 'vue-friendly-iframe';
-Vue.use(VueFriendlyIframe);
-
 export default {
   components: {
     Splitpanes,
     Pane,
     VueCodeHighlight,
   },
+  props: {
+    example: {
+      type: String,
+      default: '',
+    },
+  },
   data () {
     return {
+      ready: false,
       code: '',
       paneSize: 50,
       horizontal: false,
-      example: null,
-      height: 400,
       src: '',
+      canCopy: false,
+      hasBar: true,
+      hasCopy: true,
+      hasCode: true,
+      hasPreview: true,
+      hasSplit: true,
+      hasFs: false,
+      defaultView: 'split',
     };
-  },
-  watch: {
-    paneSize() {
-      switch(this.paneSize) {
-      case 0:
-        // this.height = this.$refs['preview'].offsetHeight;
-        break;
-      case 50:
-      case 100:
-        // this.height = this.$refs['code-panel'].$el.children[0].offsetHeight;
-        break;
-      }
-    },
   },
   async created () {
 
-    const exampleName = this.$route.query.example || null;
+    //Browser has clipboard functionality?
+    this.canCopy = !!navigator.clipboard;
 
-    this.src = `/examples/${exampleName}`;
-    this.height = this.$route.query.height || 400;
+    //Example path
+    this.src = `/examples/${this.example}`;
+
+    //Get params and override defaults
+    Object.keys(this.$route.query).forEach(key => {
+      if (this[key] !== undefined) {
+        this[key] = JSON.parse(this.$route.query[key].toLowerCase());
+      }
+    });
+
+    //defaultPreview order
+    if (this.hasSplit) {
+      this.defaultView = this.$route.query.defaultView || 'split';
+    } else if (this.hasPreview) {
+      this.defaultView = this.$route.query.defaultView || 'preview';
+    } else if (this.hasCode) {
+      this.defaultView = this.$route.query.defaultView || 'code';
+    }
+
 
     let file = '';
 
-    if (exampleName) {
+    //Get the file using axios to read it as text without rendering the code
 
-      this.example = () => import(`@/components/examples/${exampleName}.vue`);
+    if (this.example) {
+
       try {
-        file = await Axios.get(`/examples/${exampleName}.vue`, {
+        file = await Axios.get(`/examples/${this.example}.vue`, {
           responseType: 'text',
           headers: {
             'Content-Type': 'text',
           },
         });
+        this.code = file;
       } catch (error) {
         console.error(error);
       }
     }
 
-    this.code = file;
+    if (this.$refs['buttons']) {
+      let allButtons = this.$refs.buttons.querySelectorAll('.tab-btn');
+      let defaultView = this.defaultView;
 
+      allButtons.forEach(button => {
+        if (button.getAttribute('id') === defaultView) {
+          button.classList.add('is-active');
+          button.click();
+        }
+
+        button.addEventListener('click', function (event) {
+          allButtons.forEach(button => {
+            if (button !== this) {
+              button.classList.remove('is-active');
+            }
+          });
+          this.classList.add('is-active');
+        });
+      });
+    }
+
+    this.ready = true;
+
+  },
+  methods: {
+    goToExample () {
+      let url = this.$route.fullPath.replace('&hasFs=true', '');
+      window.open(url, '_blank');
+    },
+    async copy () {
+      await navigator.clipboard.writeText(this.code.data);
+      window.alert('Copied code to clipboard!');
+    },
   },
 };
 </script>
-<style>
+<style lang="scss">
   .phila-ui-example-frame {
     height: 100%;
     overflow: scroll;
@@ -120,18 +218,47 @@ export default {
     left: 0;
     width: 100%;
     z-index: 10;
-    height: 30px;
-    background-color: #ccc;
+    height: 41px;
+    line-height: 41px;
+    background-color: #fff;
+    padding: 0 0.2rem;
+    border-bottom: 2px solid $ben-franklin-blue;
+    .button {
+      margin-top: 3px;
+      margin-bottom: 0;
+      i {
+        color: $grey-light;
+      }
+      &.is-active {
+        i {
+          color: $ben-franklin-blue;
+        }
+      }
+      &#copy, &#new-window {
+        i {
+          color: $ben-franklin-blue-dark;
+        }
+      }
+    }
+
+    + .splitpanes {
+      margin-top: 41px;
+    }
   }
+
   .example-frame {
     width: 100%;
-    height: calc(100vh + 30px);
+    height: calc(100vh - 41px);
+    padding: 1rem 0.5rem;
   }
-  .splitpanes {
-    margin-top: 30px;
+
+  .splitpanes.default-theme .splitpanes__pane {
+    background-color: #fff;
+    height: calc(100vh - 41px);
+    overflow: scroll;
   }
   pre[class*="language-"] {
     margin: 0;
-    padding: 0.5rem;
+    padding: 1rem 0.5rem;
   }
 </style>
