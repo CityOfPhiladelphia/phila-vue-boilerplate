@@ -90,7 +90,7 @@
 </template>
 <script>
 import Vue from 'vue';
-import { AppHeader, DropdownNav, TabsNav, LangSelector } from '@phila/phila-ui';
+import { AppHeader, DropdownNav, TabsNav, LangSelector, MobileNav } from '@phila/phila-ui';
 import VueI18n from "vue-i18n";
 
 Vue.use(VueI18n);
@@ -128,6 +128,7 @@ export default {
     LangSelector,
     DropdownNav,
     TabsNav,
+    MobileNav,
   },
   data () {
     return {

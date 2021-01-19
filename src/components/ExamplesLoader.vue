@@ -16,7 +16,7 @@
           id="split"
           class="button is-tertiary is-small tab-btn"
           title="code and preview"
-          @click.prevent="paneSize=50"
+          @click.prevent="updateView('split')"
         >
           <i class="fas fa-columns" />
         </button>
@@ -25,7 +25,7 @@
           id="preview"
           class="button is-tertiary is-small tab-btn"
           title="preview"
-          @click.prevent="paneSize=0"
+          @click.prevent="updateView('preview')"
         >
           <i class="fas fa-eye" />
         </button>
@@ -34,7 +34,7 @@
           id="code"
           class="button is-tertiary is-small tab-btn"
           title="view code"
-          @click.prevent="paneSize=100"
+          @click.prevent="updateView('code')"
         >
           <i class="fas fa-code" />
         </button>
@@ -66,8 +66,8 @@
       <pane
         v-if="hasCode"
         ref="code-panel"
+        :class="'code-panel'"
         :size="paneSize"
-        class="code-wrap"
       >
         <vue-code-highlight>
           {{ code.data }}
@@ -75,6 +75,7 @@
       </pane>
       <pane
         ref="preview-panel"
+        :class="'preview-panel'"
         :size="100 - paneSize"
       >
         <iframe
@@ -193,6 +194,11 @@ export default {
     this.ready = true;
 
   },
+  mounted () {
+    if (this.horizontal) {
+      this.updateView("split");
+    }
+  },
   methods: {
     goToExample () {
       let url = this.$route.fullPath.replace('&hasFs=true', '');
@@ -201,6 +207,33 @@ export default {
     async copy () {
       await navigator.clipboard.writeText(this.code.data);
       window.alert('Copied code to clipboard!');
+    },
+    updateView (view) {
+      let codePanel = this.$refs['code-panel'];
+      let previewPanel = this.$refs['preview-panel'];
+      if (this.horizontal) {
+        if (view === 'split') {
+          codePanel.style.height = "50%";
+          previewPanel.style.height = "50%";
+        } else if (view === 'preview') {
+          codePanel.style.height = "0";
+          previewPanel.style.height = "100%";
+        } else if (view === 'code') {
+          codePanel.style.height = "100%";
+          previewPanel.style.height = "0";
+        }
+        this.paneSize = 100;
+      } else {
+        codePanel.style.height = "100%";
+        previewPanel.style.height = "100%";
+        if (view === 'split') {
+          this.paneSize = 50;
+        } else if (view === 'preview') {
+          this.paneSize = 0;
+        } else if (view === 'code') {
+          this.paneSize = 100;
+        }
+      }
     },
   },
 };
@@ -250,6 +283,10 @@ export default {
     width: 100%;
     height: calc(100vh - 41px);
     padding: 1rem 0.5rem;
+  }
+
+  .code-panel {
+    background-color: #263238 !important;
   }
 
   .splitpanes.default-theme .splitpanes__pane {
