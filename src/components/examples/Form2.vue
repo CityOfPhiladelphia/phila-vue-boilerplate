@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="columns">
-      <div class="column is-half">
+      <div class="column">
         <ValidationObserver
           v-slot="{ errors, handleSubmit }"
           tag="div"

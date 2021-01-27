@@ -1,62 +1,68 @@
 <template>
   <div class="container">
-    <div class="columns">
-      <div class="column is-half">
-        <ValidationObserver
-          v-slot="{ errors }"
-          tag="div"
-        >
-          <input-form
-            title="Form title"
-            desc="Form description"
-            :errors="errors"
-          >
-            <p class="is-field-info-important">
-              This form shows error counts as the user interacts with each field.
-            </p>
-            <vee-textbox
-              v-model="value1"
-              rules="required"
-              placeholder="First Name"
-              required
-              name="Firs Name"
-            />
-            <vee-textbox
-              v-model="value2"
-              rules="required"
-              placeholder="Last Name"
-              required
-              name="Last Name"
-            />
-          </input-form>
-        </ValidationObserver>
-      </div>
-    </div>
+    <input-form
+      title="Form title"
+      desc="Form description"
+      :errors="errorCount"
+    >
+      <textbox
+        v-model="textboxValue1"
+        placeholder="First Name"
+        required
+        name="Firs Name"
+        :errors="!textboxValue1 ? 'this field is required' : ''"
+      />
+      <textbox
+        v-model="textboxValue2"
+        placeholder="Last Name"
+        required
+        :errors="!textboxValue2 ? 'this field is required' : ''"
+        name="Last Name"
+      />
+      <button
+        slot="submit"
+        class="button is-cta"
+        @click.prevent="submitForm"
+      >
+        Submit
+      </button>
+    </input-form>
   </div>
 </template>
 <script>
 import { InputForm, Textbox } from '@phila/phila-ui';
-import { ValidationObserver, withValidation, extend } from 'vee-validate';
-
-import { required } from 'vee-validate/dist/rules';
-extend('required', {
-  ...required,
-  message: 'This field is required',
-});
-
-const VeeTextbox = withValidation(Textbox);
 
 export default {
   components: {
     InputForm,
-    ValidationObserver,
-    VeeTextbox,
+    Textbox,
   },
   data () {
     return {
-      value1: "",
-      value2: "",
+      textboxValue1: "",
+      textboxValue2: "",
     };
+  },
+  computed: {
+    errorCount () {
+      let count = 0;
+      if (this.textboxValue1.length === 0) {
+        count++;
+      }
+      if (this.textboxValue2.length === 0) {
+        count++;
+      }
+      return count;
+    },
+  },
+  methods: {
+    submitForm () {
+      if (this.errorCount === 0) {
+        alert('Form submitted');
+      } else {
+        alert('Please fix the errors first');
+      }
+    },
   },
 };
 </script>

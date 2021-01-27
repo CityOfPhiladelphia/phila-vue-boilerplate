@@ -1,2 +1,7 @@
 // All scss
 @import "@phila/phila-ui/src/assets/styles/scss/all.scss";
+
+#app, html, body {
+  min-height: 100%;
+  height: 100%;
+}

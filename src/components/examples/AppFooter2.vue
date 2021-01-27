@@ -12,13 +12,10 @@
         <div :style="`background-color:rgb(255, ${255 - n * 20}, ${255 - n * 15});height:${n * 10}vh;width:100%;`" />
       </div>
     </main>
-    <app-footer :is-sticky="true">
-      <ul>
-        <li><a href="#">Link 1</a></li>
-        <li><a href="#">Link 2</a></li>
-        <li><a href="#">Link 3</a></li>
-      </ul>
-    </app-footer>
+    <app-footer
+      :is-sticky="true"
+      :links="links"
+    />
   </div>
 </template>
 <script>
@@ -27,6 +24,27 @@ export default {
   components: {
     AppFooter,
     AppHeader,
+  },
+  data () {
+    return{
+      links: [
+        {
+          type: "native",
+          href: "#",
+          text: "Link 1",
+        },
+        {
+          type: "native",
+          href: "#",
+          text: "Link 2",
+        },
+        {
+          type: "native",
+          href: "#",
+          text: "Link 3",
+        },
+      ],
+    };
   },
 };
 </script>
