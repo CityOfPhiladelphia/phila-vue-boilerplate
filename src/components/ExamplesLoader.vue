@@ -132,7 +132,7 @@ export default {
     this.canCopy = !!navigator.clipboard;
 
     //Example path
-    this.src = `https://d1ndb3f1jqxfee.cloudfront.net/examples/${this.example}`;
+    this.src = `/examples/${this.example}`;
 
     //Get params and override defaults
     Object.keys(this.$route.query).forEach(key => {

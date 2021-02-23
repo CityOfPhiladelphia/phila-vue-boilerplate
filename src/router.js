@@ -223,6 +223,16 @@ export default new Router({
           },
         },
         {
+          path: "CheckboxTester",
+          name: "CheckboxTester",
+          component: () => import("@/components/examples/CheckboxTester"),
+          meta: {
+            label: 'tester',
+            category: "Inputs",
+            component: "Checkbox",
+          },
+        },
+        {
           path: "Radio1",
           name: "Radio1",
           component: () => import("@/components/examples/Radio1"),
