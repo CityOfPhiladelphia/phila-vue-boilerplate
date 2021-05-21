@@ -353,6 +353,26 @@ export default new Router({
           },
         },
         {
+          path: "Phone1",
+          name: "Phone1",
+          component: () => import("@/components/examples/Phone1"),
+          meta: {
+            label: 'basic phone input',
+            category: "Inputs",
+            component: "Phone",
+          },
+        },
+        {
+          path: "Phone2",
+          name: "Phone2",
+          component: () => import("@/components/examples/Phone2"),
+          meta: {
+            label: 'input with validation',
+            category: "Inputs",
+            component: "Phone",
+          },
+        },
+        {
           path: "Callout1",
           name: "Callout1",
           component: () => import("@/components/examples/Callout1"),
