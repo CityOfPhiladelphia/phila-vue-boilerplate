@@ -6,6 +6,7 @@
     "serve": "vue-cli-service serve",
     "serve:prod": "vue-cli-service serve --mode production",
     "build": "vue-cli-service build",
+    "build:prod": "vue-cli-service build --dest dist/phone-input-review --mode production",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

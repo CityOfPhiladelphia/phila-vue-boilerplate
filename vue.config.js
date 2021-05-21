@@ -1,7 +1,7 @@
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  publicPath: './',
+  publicPath: process.env.NODE_ENV === 'production' ? '/phone-input-review' : '',
   css: {
     loaderOptions: {
       sass: {
