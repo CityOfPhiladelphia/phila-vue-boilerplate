@@ -1,7 +1,9 @@
+var buildConfig = require('./buildConfig');
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/phone-input-review' : '',
+  publicPath: buildConfig.publicPath,
+  outputDir: buildConfig.outputDir,
   css: {
     loaderOptions: {
       sass: {

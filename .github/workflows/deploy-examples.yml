@@ -15,10 +15,16 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "10.x"
-
-      - name: npm install, lint, and build
+      - name: npm install
         run: |
           npm install
+      - name: build branch (skip examples, beta)
+        if: ${{ env.GIT_BRANCH_NAME != 'examples' && env.GIT_BRANCH_NAME != 'beta' }}
+        run: |
+          export VUE_APP_GIT_BRANCH=${GIT_BRANCH_NAME};  npm run build --prod
+      - name: build examples or beta
+        if: ${{ env.GIT_BRANCH_NAME == 'examples' || env.GIT_BRANCH_NAME == 'beta' }}
+        run: |
           npm run build --prod
       - name: Deploy Beta
         if: ${{ env.GIT_BRANCH_NAME == 'beta' }}

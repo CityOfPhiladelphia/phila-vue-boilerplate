@@ -1,11 +1,12 @@
 import Vue from "vue";
 import Router from "vue-router";
+var buildConfig = require('../buildConfig');
 
 Vue.use(Router);
 
 export default new Router({
-  // mode: "history",
-  base: process.env.NODE_ENV === 'production' ? '/phone-input-review/' : '/',
+  mode: "history",
+  base: buildConfig.vueRouterBase,
   routes: [
     {
       path: "/",
