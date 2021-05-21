@@ -3,7 +3,6 @@ const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   publicPath: buildConfig.publicPath,
-  outputDir: buildConfig.outputDir,
   css: {
     loaderOptions: {
       sass: {
