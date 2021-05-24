@@ -1,23 +1,11 @@
 <template>
   <div class="container">
-    <phone
-      v-model="phone"
-    />
+    Application content...
   </div>
 </template>
 
 <script>
-import { Phone } from '@phila/phila-ui';
-
 export default {
-  name: "Home",
-  components: {
-    Phone,
-  },
-  data () {
-    return {
-      phone: '',
-    };
-  },
+  name: 'Home',
 };
 </script>
