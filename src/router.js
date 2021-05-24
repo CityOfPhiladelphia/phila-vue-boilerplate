@@ -7,7 +7,7 @@ console.log(buildConfig.vueRouterBase);
 Vue.use(Router);
 
 export default new Router({
-  mode: "history",
+  // mode: "history",
   // base: buildConfig.vueRouterBase,
   routes: [
     {
