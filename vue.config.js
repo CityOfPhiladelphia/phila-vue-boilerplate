@@ -1,8 +1,7 @@
-var buildConfig = require('./buildConfig');
-const CopyPlugin = require("copy-webpack-plugin");
+const shouldBuild = process.env.NODE_ENV === 'production' && process.env.VUE_APP_GIT_BRANCH;
 
 module.exports = {
-  publicPath: buildConfig.publicPath,
+  publicPath: shouldBuild ? `/${process.env.VUE_APP_GIT_BRANCH}/` : '/',
   css: {
     loaderOptions: {
       sass: {
@@ -12,14 +11,5 @@ module.exports = {
         `,
       },
     },
-  },
-  configureWebpack: {
-    plugins: [
-      new CopyPlugin({
-        patterns: [
-          { from: "src/components/examples", to: "examples" },
-        ],
-      }),
-    ],
   },
 };
