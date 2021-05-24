@@ -5,5 +5,6 @@ const branch = process.env.VUE_APP_GIT_BRANCH;
 module.exports = {
   branch,
   publicPath: shouldBuild ? `/${branch}` : '',
+  // outputDir: shouldBuild ? `dist/${branch}` : 'dist',
   vueRouterBase: shouldBuild ? `/${branch}/` : '/',
 };
