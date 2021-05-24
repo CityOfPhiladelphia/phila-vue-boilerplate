@@ -2,6 +2,8 @@ import Vue from "vue";
 import Router from "vue-router";
 var buildConfig = require('../buildConfig');
 
+console.log(buildConfig.vueRouterBase);
+
 Vue.use(Router);
 
 export default new Router({
