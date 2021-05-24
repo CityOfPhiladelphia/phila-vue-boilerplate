@@ -8,7 +8,7 @@ Vue.use(Router);
 
 export default new Router({
   mode: "history",
-  base: buildConfig.vueRouterBase,
+  // base: buildConfig.vueRouterBase,
   routes: [
     {
       path: "/",
