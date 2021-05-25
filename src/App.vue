@@ -199,7 +199,7 @@
           Table with first col sorted (desc)
         </h2>
         <div class="subtitle">
-          and with sortable enabled on second column
+          and with sorting enabled on second column
         </div>
         <table class="table">
           <thead>
