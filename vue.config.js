@@ -1,6 +1,7 @@
 const shouldBuild = process.env.NODE_ENV === 'production' && process.env.VUE_APP_GIT_BRANCH;
 
 module.exports = {
+  lintOnSave: true,
   publicPath: shouldBuild ? `/${process.env.VUE_APP_GIT_BRANCH}/` : '/',
   css: {
     loaderOptions: {
