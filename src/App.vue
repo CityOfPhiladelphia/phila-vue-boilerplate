@@ -77,13 +77,13 @@
                 />
               </template>
             </date-picker>
+            <hr>
             <h2 class="title">
               Date-picker
             </h2>
             <div class="subtitle">
               With error
             </div>
-            <hr>
             <date-picker
               v-model="dateValue4"
               v-bind="calOptions4"
