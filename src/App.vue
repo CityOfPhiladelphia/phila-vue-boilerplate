@@ -1,61 +1,81 @@
 <template>
   <div id="app">
     <app-header
-      app-title="Phone input review"
+      app-title="Table styles preview"
       :is-sticky="false"
     />
     <main>
       <div class="container">
-        <div class="columns">
-          <div class="column is-half">
-            <h2 class="title">
-              Phone input
-            </h2>
-            <div class="subtitle">
-              Basic setup. Formatting is done automatically, but the field is not validated.
-            </div>
-            <phone v-model="phoneNumber1" />
-            <h2 class="title">
-              Phone input with validation
-            </h2>
-            <div class="subtitle">
-              Checks to make sure a phone number was entered, and then checks to make sure the format is correct. Click on the input to focus, and then click somewhere else without a valid number to see the error message.
-            </div>
-            <vee-phone
-              v-model="phoneNumber2"
-              rules="required|phone"
-              name="Phone number"
-            />
-          </div>
-        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="sortable sorted desc">
+                Column 1 very long column name
+              </th>
+              <th class="sortable">
+                Column 2
+              </th>
+              <th>Column 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Col 1 cell 1
+              </td>
+              <td>
+                Col 2 cell 1
+              </td>
+              <td>
+                Col 3 cell 1
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Col 1 cell 2
+              </td>
+              <td>
+                Col 2 cell 2
+              </td>
+              <td>
+                Col 3 cell 2
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Col 1 cell 3
+              </td>
+              <td>
+                Col 2 cell 3
+              </td>
+              <td>
+                Col 3 cell 3
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Col 1 cell 4
+              </td>
+              <td>
+                Col 2 cell 4
+              </td>
+              <td>
+                Col 3 cell 4
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </main>
   </div>
 </template>
 
 <script>
-import { AppHeader, Phone } from '@phila/phila-ui';
-import { required } from 'vee-validate/dist/rules';
-import { extend, withValidation, setInteractionMode } from 'vee-validate';
-
-setInteractionMode('eager');
-
-const VeePhone = withValidation(Phone);
-
-extend('phone', value => {
-  return /\(\d{3}\) \d{3} - \d{4}/gi.test(value);
-});
-
-extend('required', {
-  ...required,
-  message: 'Phone number is required',
-});
+import { AppHeader } from '@phila/phila-ui';
 
 export default {
   components: {
     AppHeader,
-    Phone,
-    VeePhone,
   },
   data () {
     return {
