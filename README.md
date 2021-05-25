@@ -25,9 +25,9 @@ This branch has a growing list of PhilaUI examples, which is used by PhilaUI doc
 ```https://phila-ui-demo.s3.amazonaws.com/YOUR_BRANCH_NAME/index.html```
 
 #### How to
-- Pull the branch "demo-sample"
-- ``git checkout -b my-new-branch-name``  (see naming limitation below)
-- Update package.json with the version of phila-ui you want to use
+- Pull the branch **demo-sample**
+- ``git checkout -b my-new-branch-name``  (see branch naming limitation below)
+- Update package.json with the version of **phila-ui** you want to use
 - Add demo code in App.vue
 - Push new branch to github
 
