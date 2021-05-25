@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <app-header
-      app-title="Demo title"
+      app-title="Date & time picker"
       :is-sticky="false"
     />
     <main>
@@ -83,6 +83,7 @@
             <div class="subtitle">
               With error
             </div>
+            <hr>
             <date-picker
               v-model="dateValue4"
               v-bind="calOptions4"
