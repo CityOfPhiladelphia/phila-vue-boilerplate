@@ -8,7 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@phila/phila-ui": "git://github.com/cityofphiladelphia/phila-ui.git#feat/phone-and-date",
+    "@phila/phila-ui": "CityOfPhiladelphia/phila-ui.git#feat/phone-and-date",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
