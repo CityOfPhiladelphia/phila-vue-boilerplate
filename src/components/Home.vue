@@ -26,7 +26,7 @@
 <script>
 import { InputForm, Phone, Date } from '@phila/phila-ui';
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
     InputForm,
     Phone,
@@ -40,14 +40,14 @@ export default {
   },
   computed: {
     errorCount () {
-      let count = 0;
+      const count = 0;
       return count;
     },
   },
   watch: {
 
   },
-  mounted() {
+  mounted () {
   },
   methods: {
     submitForm () {
