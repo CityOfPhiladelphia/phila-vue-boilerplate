@@ -18,11 +18,7 @@ jobs:
       - name: npm install
         run: |
           npm install
-          [ ! -d "node_modules/@phila/phila-ui/dist/" ]
-            | && cd node_modules/@phila/phila-ui/
-            | && npm install && npm run build
-            | && rm -rf node_modules
-            | && cd ../../../
+          [ ! -d "node_modules/@phila/phila-ui/dist/" ] && cd node_modules/@phila/phila-ui/ && npm install && npm run build && rm -rf node_modules && cd ../../../
       - name: build branch (skip examples, beta)
         if: ${{ env.GIT_BRANCH_NAME != 'examples' && env.GIT_BRANCH_NAME != 'beta' }}
         run: |
