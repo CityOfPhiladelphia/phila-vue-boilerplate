@@ -4,8 +4,9 @@ module.exports = {
     node: true,
   },
   "extends": [
-    'plugin:vue/essential',
-    '@vue/standard'
+    "eslint:recommended",
+    "plugin:vue/essential",
+    "plugin:vue/recommended",
   ],
   rules: {
     // Disabled only on development
