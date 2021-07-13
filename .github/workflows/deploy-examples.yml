@@ -11,14 +11,13 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: EthanSK/git-branch-name-action@v1
-      - name: Use Node.js 14.x
+      - name: Use Node.js 10.x
         uses: actions/setup-node@v1
         with:
-          node-version: "14.x"
+          node-version: "10.x"
       - name: npm install
         run: |
           npm install
-          [ ! -d "node_modules/@phila/phila-ui/dist/" ] && cd node_modules/@phila/phila-ui/ && npm install && npm run build && rm -rf node_modules && cd ../../../
       - name: build branch (skip examples, beta)
         if: ${{ env.GIT_BRANCH_NAME != 'examples' && env.GIT_BRANCH_NAME != 'beta' }}
         run: |
