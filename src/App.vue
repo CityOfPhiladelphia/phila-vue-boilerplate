@@ -33,7 +33,6 @@
 import { AppHeader, InputForm, Phone, Date } from '@phila/phila-ui';
 
 export default {
-  name: 'App',
   components: {
     AppHeader,
     InputForm,
