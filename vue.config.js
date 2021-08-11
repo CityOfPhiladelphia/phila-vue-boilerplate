@@ -12,7 +12,4 @@ module.exports = {
       },
     },
   },
-  transpileDependencies: [
-    '@phila/phila-ui',
-  ],
 };
