@@ -1,45 +1,35 @@
 <template>
   <div id="app">
     <app-header
-      app-title="Demo title"
+      app-title="Tooltip demo"
       :is-sticky="false"
-    />
+    >
+      <mobile-nav slot="mobile-nav">
+        <ul>
+          <li>
+            <router-link :to="{ name: 'app' }">
+              Auto positioning
+            </router-link>
+          </li>
+          <li>
+            <router-link :to="{ name: 'app2' }">
+              Set positions
+            </router-link>
+          </li>
+        </ul>
+      </mobile-nav>
+      <tabs-nav slot="tabs-nav">
+        <router-link :to="{ name: 'app' }">
+          Auto positioning
+        </router-link>
+        <router-link :to="{ name: 'app2' }">
+          Set positions
+        </router-link>
+      </tabs-nav>
+    </app-header>
     <main>
       <div class="container">
-        <p>
-          Tooltip position = top-center <tooltip
-            message="Some tooltip text"
-            position="top-center"
-          />
-        </p>
-        <br><br><br><br>
-        <p>
-          Tooltip position = bottom-center <tooltip
-            message="Some tooltip text"
-            position="bottom-center"
-          />
-        </p>
-        <br><br><br><br>
-        <p>
-          Tooltip position = right <tooltip
-            message="Some tooltip text"
-            position="right"
-          />
-        </p>
-        <br><br><br><br>
-        <p>
-          Tooltip position = top-right <tooltip
-            message="Some tooltip text"
-            position="top-right"
-          />
-        </p>
-        <br><br><br><br>
-        <p>
-          Tooltip position = bottom-right <tooltip
-            message="Some tooltip text"
-            position="bottom-right"
-          />
-        </p>
+        <router-view />
       </div>
     </main>
   </div>
@@ -52,12 +42,13 @@
 //rework how dropdown works
 //add translation to all components
 
-import { AppHeader, Tooltip } from '@phila/phila-ui';
+import { AppHeader, MobileNav, TabsNav } from '@phila/phila-ui';
 
 export default {
   components: {
     AppHeader,
-    Tooltip,
+    TabsNav,
+    MobileNav,
   },
   data () {
     return {};
