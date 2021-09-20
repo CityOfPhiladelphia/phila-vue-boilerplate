@@ -2,6 +2,7 @@ const shouldBuild = process.env.NODE_ENV === 'production' && process.env.VUE_APP
 
 module.exports = {
   publicPath: shouldBuild ? `/${process.env.VUE_APP_GIT_BRANCH}/` : '/',
+  transpileDependencies: [ '@phila/phila-ui' ],
   css: {
     loaderOptions: {
       sass: {
