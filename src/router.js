@@ -10,10 +10,5 @@ export default new Router({
       name: "app",
       component: () => import('./Auto.vue'),
     },
-    {
-      path: "/auto",
-      name: "app2",
-      component: () => import('./Set.vue'),
-    },
   ],
 });
