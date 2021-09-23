@@ -7,7 +7,18 @@ export default new Router({
   routes: [
     {
       path: "/",
-      name: "app",
+      name: "home",
+      component: () => import('./pages/home.vue'),
+    },
+    {
+      path: "/sample1",
+      name: "sample1",
+      component: () => import('./pages/sample1.vue'),
+    },
+    {
+      path: "/sample2",
+      name: "sample2",
+      component: () => import('./pages/sample2.vue'),
     },
   ],
 });

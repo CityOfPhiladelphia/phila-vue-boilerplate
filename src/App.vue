@@ -3,21 +3,36 @@
     <app-header
       app-title="Demo title"
       :is-sticky="false"
-    />
+    >
+      <tabs-nav slot="tabs-nav">
+        <router-link to="/">
+          All tags
+        </router-link>
+        <router-link to="/sample1">
+          Sample 1
+        </router-link>
+        <router-link to="/sample2">
+          Sample 2
+        </router-link>
+      </tabs-nav>
+    </app-header>
     <main>
       <div class="container">
-        Demo code starts here
+        <div class="content">
+          <router-view />
+        </div>
       </div>
     </main>
   </div>
 </template>
 
 <script>
-import { AppHeader } from '@phila/phila-ui';
+import { AppHeader, TabsNav } from '@phila/phila-ui';
 
 export default {
   components: {
     AppHeader,
+    TabsNav,
   },
   data () {
     return {};
