@@ -7,7 +7,12 @@
     <h3>Heading 3</h3>
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, dolore ratione sit temporibus aliquam, asperiores possimus ab dignissimos deleniti sapiente deserunt sequi distinctio? Fugit amet autem deleniti, laudantium vitae dolores!</p>
     <h4>Heading 4</h4>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, dolore ratione sit temporibus aliquam, asperiores possimus ab dignissimos deleniti sapiente deserunt sequi distinctio? Fugit amet autem deleniti, laudantium vitae dolores!</p>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, dolore ratione sit temporibus aliquam, asperiores possimus ab dignissimos deleniti <a
+        href="#"
+        class="external-link"
+      >dignissimos deleniti</a> sequi distinctio? Fugit amet autem deleniti, laudantium vitae dolores!
+    </p>
     <ul>
       <li>List item 1</li>
       <li>

@@ -47,6 +47,10 @@
       - <em>Italic (em)</em> <br>
       - <strong>Strong (bold)</strong> <br>
       - <a href="#">Link</a><br>
+      - <a
+        href="#"
+        class="external-link"
+      >External link</a><br>
       - Subscript: Water<sub>H2O</sub><br>
       - Superscript: Water<sup>H2O</sup>
     </p>
