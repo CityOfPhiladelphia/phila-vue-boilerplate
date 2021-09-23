@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <app-header
-      app-title="Demo title"
+      app-title="User content"
       :is-sticky="false"
     >
       <tabs-nav slot="tabs-nav">
