@@ -1,8 +1,10 @@
 <template>
   <div>
-    Close to top <tooltip
-      message="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cmm sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium."
-    />
+    <p>
+      Close to top <tooltip
+        message="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cmm sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium."
+      />
+    </p>
     <br><br><br>
     <p>
       Close to left <tooltip
