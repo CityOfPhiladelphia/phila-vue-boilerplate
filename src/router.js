@@ -376,11 +376,26 @@ export default new Router({
           path: "Full1",
           name: "Full1",
           component: () => import("@/components/examples/Full1"),
+          redirect: {
+            name: 'Full1Styles',
+          },
           meta: {
             label: 'Full example using all components and styles',
             component: 'All',
             category: 'Other',
           },
+          children: [
+            {
+              path: "Full1Styles",
+              name: "Full1Styles",
+              component: () => import("@/components/examples/Full1Styles"),
+            },
+            {
+              path: "Full1Components",
+              name: "Full1Components",
+              component: () => import("@/components/examples/Full1Components"),
+            },
+          ],
         },
       ],
     },
