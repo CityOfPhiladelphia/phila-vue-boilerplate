@@ -1,7 +1,19 @@
 // All scss
-@import "@phila/phila-ui/src/assets/styles/scss/all.scss";
+// $use-paddingless-content: true;
+// @import "bulma";
+// @import "bulma-checkradio";
+@import '@phila/phila-ui/src/assets/styles/scss/all.scss';
+// @import '@phila/phila-ui/src/assets/styles/scss/headings.scss';
+// @import '@phila/phila-ui/src/assets/styles/scss/content.scss';
+// @import '@phila/phila-ui/src/assets/styles/scss/buttons.scss';
+// @import '@phila/phila-ui/src/assets/styles/scss/deprecated/buttons.scss';
 
 #app, html, body {
   min-height: 100%;
   height: 100%;
+}
+
+code {
+  background: $grey-dark;
+  color: $white;
 }
