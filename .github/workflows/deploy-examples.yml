@@ -3,7 +3,7 @@ name: Build and Deploy Examples
 on:
   push:
     branches:
-    - examples
+    - examples-next
 
 jobs:
   build:
@@ -12,10 +12,10 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: Use Node.js 10.x
+    - name: Use Node.js 12.x
       uses: actions/setup-node@v1
       with:
-        node-version: '10.x'
+        node-version: '12.x'
 
     - name: npm install, lint, and build
       run: |
@@ -28,5 +28,4 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: |
-        aws s3 sync dist s3://${{ secrets.AWS_BUCKET_EXAMPLES }} --region us-east-1 --delete
-        aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DIST_EXAMPLES }} --paths "/*"
+        aws s3 sync dist s3://phila-ui-examples-next --region us-east-1 --delete
