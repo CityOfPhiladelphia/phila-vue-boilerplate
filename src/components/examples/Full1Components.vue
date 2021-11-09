@@ -3,7 +3,7 @@
     <div class="columns is-multiline">
       <div class="column is-half">
         <code>form style 1</code>
-        <hr>
+        <hr />
         <input-form
           title="A basic form with inner-labels"
           desc="Some more informatiom about this form"
@@ -12,7 +12,11 @@
             v-model="textboxValue"
             placeholder="My textbox value"
             desc="Extra info about this field some very long field to test wrapping, line height, and other spacing elements."
-            :errors="formErrors.form1 === true ? 'this field is required a very long error message to test line wrapping and line height.' : ''"
+            :errors="
+              formErrors.form1 === true
+                ? 'this field is required a very long error message to test line wrapping and line height.'
+                : ''
+            "
           />
           <phone
             v-model="phoneValue"
@@ -68,22 +72,19 @@
             desc="Extra info about this field"
             :errors="formErrors.form1 === true ? 'this field is required' : ''"
           />
-          <div
-            slot="submit"
-            class="buttons"
-          >
+          <div slot="submit" class="buttons">
             <input
               type="submit"
               value="Toggle Errors"
               class="button is-cta"
               @click.prevent="toggleErrors('form1')"
-            >
+            />
           </div>
         </input-form>
       </div>
       <div class="column is-half">
         <code>form style 2</code>
-        <hr>
+        <hr />
         <input-form
           title="A basic form with outter-labels"
           desc="Some more informatiom about this form"
@@ -149,53 +150,38 @@
             desc="Extra info about this field"
             :errors="formErrors.form2 === true ? 'this field is required' : ''"
           />
-          <div
-            slot="submit"
-            class="buttons"
-          >
+          <div slot="submit" class="buttons">
             <input
               type="submit"
               value="Toggle Errors"
               class="button is-cta"
               @click.prevent="toggleErrors('form2')"
-            >
+            />
           </div>
         </input-form>
       </div>
       <div class="column is-full">
         <code>Callout component</code>
-        <hr>
+        <hr />
         <callout message="This is the default message" />
-        <callout
-          message="This is a info message"
-          type="info"
-        />
-        <callout
-          message="This is a success message"
-          type="success"
-        />
-        <callout
-          message="This is a warning message"
-          type="warning"
-        />
-        <callout
-          message="This is a danger message"
-          type="danger"
-        />
+        <callout message="This is a info message" type="info" />
+        <callout message="This is a success message" type="success" />
+        <callout message="This is a warning message" type="warning" />
+        <callout message="This is a danger message" type="danger" />
       </div>
       <div class="column is-full">
-        <hr>
+        <hr />
         <code>Tooltip</code>
-        <hr>
+        <hr />
         <p>
           Some text with a tooltip
           <tooltip message="My tooltip message" />
         </p>
       </div>
-      <!-- <div class="column is-full">
-        <hr>
+      <div class="column is-full">
+        <hr />
         <code>Modal window</code>
-        <hr>
+        <hr />
         <div class="buttons">
           <button
             class="button is-primary"
@@ -217,73 +203,64 @@
           </button>
         </div>
         <vue-final-modal
-          v-model="showModal.default"
           v-slot="{ close }"
+          v-model="showModal.default"
           name="default"
           :click-to-close="false"
         >
           <modal :close="close" />
         </vue-final-modal>
         <vue-final-modal
-          v-model="showModal.customButtons"
           v-slot="{ close }"
+          v-model="showModal.customButtons"
           name="customButtons"
           :click-to-close="false"
         >
           <modal :close="close">
             <template slot="actions-before">
-              <button class="button is-cta is-secondary">
-                Test button
-              </button>
+              <button class="button is-cta is-secondary">Test button</button>
             </template>
           </modal>
         </vue-final-modal>
         <vue-final-modal
-          v-model="showModal.alertModal"
           v-slot="{ close }"
+          v-model="showModal.alertModal"
           name="alertModal"
           :click-to-close="false"
         >
-          <modal
-            :close="close"
-            type="alert"
-          />
+          <modal :close="close" type="alert" />
         </vue-final-modal>
-        <hr>
+        <hr />
         <code>Table styles with VueGoodTable plugin</code>
-        <hr>
-        <vue-good-table
-          :columns="tColumns"
-          :rows="tRows"
-          style-class="table"
-        />
-      </div> -->
+        <hr />
+        <vue-good-table :columns="tColumns" :rows="tRows" style-class="table" />
+      </div>
     </div>
   </div>
 </template>
 <script>
-import Vue from 'vue';
-import * as PhilaUI from '@phila/phila-ui';
-// import { VueFinalModal } from 'vue-final-modal';
-// import 'vue-good-table/dist/vue-good-table.css';
-// import { VueGoodTable } from 'vue-good-table';
+import Vue from "vue";
+import * as PhilaUI from "@phila/phila-ui";
+import { VueFinalModal } from "vue-final-modal";
+import "vue-good-table/dist/vue-good-table.css";
+import { VueGoodTable } from "vue-good-table";
 
 Vue.use(PhilaUI);
 
 export default {
   components: {
-    // VueFinalModal,
-    // VueGoodTable,
+    VueFinalModal,
+    VueGoodTable,
   },
-  data () {
+  data() {
     return {
       appHeader: {
         appTitle: "My First App",
         appSubtitle: "My app description",
         brandingImage: {
-          src: require('../../assets/sample-logo.png'),
-          width: '200px',
-          height: 'auto',
+          src: require("../../assets/sample-logo.png"),
+          width: "200px",
+          height: "auto",
           alt: "My branding image",
         },
       },
@@ -294,36 +271,28 @@ export default {
       },
       languages: [
         {
-          language: 'en-US',
-          title: 'English',
+          language: "en-US",
+          title: "English",
         },
         {
-          language: 'es',
-          title: 'Spanish',
+          language: "es",
+          title: "Spanish",
         },
         {
-          language: 'it',
-          title: 'Italian',
+          language: "it",
+          title: "Italian",
         },
         {
-          language: 'pt-BR',
-          title: 'Portuguese (Brazil)',
+          language: "pt-BR",
+          title: "Portuguese (Brazil)",
         },
       ],
       textboxValue: "",
       phoneValue: "",
       checkboxValue: [],
-      checkboxes: [
-        "Checkbox 1",
-        "Checkbox 2",
-        "Checkbox 3",
-      ],
+      checkboxes: [ "Checkbox 1", "Checkbox 2", "Checkbox 3" ],
       radioValue: "",
-      radioButtons: [
-        "Radio button 1",
-        "Radio button 2",
-        "Radio button 3",
-      ],
+      radioButtons: [ "Radio button 1", "Radio button 2", "Radio button 3" ],
       dropdownValue: "",
       dropdownValue2: "",
       dropdownOptions: [
@@ -332,27 +301,19 @@ export default {
         "Dropdown Option 3",
       ],
       grouppedDropdownOptions: {
-        group1: [
-          'option1',
-          'option2',
-          'option3',
-        ],
-        group2: [
-          'option1',
-          'option2',
-          'option3',
-        ],
+        group1: [ "option1", "option2", "option3" ],
+        group2: [ "option1", "option2", "option3" ],
       },
       grouppedDropdownOptions2: {
         "Group 1": {
-          'opt1': 'opt 1',
-          'opt2': 'opt 2',
-          'opt3': 'opt 3',
+          opt1: "opt 1",
+          opt2: "opt 2",
+          opt3: "opt 3",
         },
         "Group 2": {
-          'opt1': 'opt 1',
-          'opt2': 'opt 2',
-          'opt3': 'opt 3',
+          opt1: "opt 1",
+          opt2: "opt 2",
+          opt3: "opt 3",
         },
       },
       textAreaValue: "",
@@ -374,51 +335,86 @@ export default {
       },
       tColumns: [
         {
-          label: 'Name',
-          field: 'name',
+          label: "Name",
+          field: "name",
         },
         {
-          label: 'Age',
-          field: 'age',
-          type: 'number',
+          label: "Age",
+          field: "age",
+          type: "number",
         },
         {
-          label: 'Created On',
-          field: 'createdAt',
-          type: 'date',
-          dateInputFormat: 'yyyy-MM-dd',
-          dateOutputFormat: 'MMM do yy',
+          label: "Created On",
+          field: "createdAt",
+          type: "date",
+          dateInputFormat: "yyyy-MM-dd",
+          dateOutputFormat: "MMM do yy",
         },
         {
-          label: 'Percent',
-          field: 'score',
-          type: 'percentage',
+          label: "Percent",
+          field: "score",
+          type: "percentage",
         },
       ],
       tRows: [
-        { id:1, name:"John", age: 20, createdAt: '2011-10-31',score: 0.03343 },
-        { id:2, name:"Jane", age: 24, createdAt: '2011-10-31', score: 0.03343 },
-        { id:3, name:"Susan", age: 16, createdAt: '2011-10-30', score: 0.03343 },
-        { id:4, name:"Chris", age: 55, createdAt: '2011-10-11', score: 0.03343 },
-        { id:5, name:"Dan", age: 40, createdAt: '2011-10-21', score: 0.03343 },
-        { id:6, name:"John", age: 20, createdAt: '2011-10-31', score: 0.03343 },
+        {
+          id: 1,
+          name: "John",
+          age: 20,
+          createdAt: "2011-10-31",
+          score: 0.03343,
+        },
+        {
+          id: 2,
+          name: "Jane",
+          age: 24,
+          createdAt: "2011-10-31",
+          score: 0.03343,
+        },
+        {
+          id: 3,
+          name: "Susan",
+          age: 16,
+          createdAt: "2011-10-30",
+          score: 0.03343,
+        },
+        {
+          id: 4,
+          name: "Chris",
+          age: 55,
+          createdAt: "2011-10-11",
+          score: 0.03343,
+        },
+        {
+          id: 5,
+          name: "Dan",
+          age: 40,
+          createdAt: "2011-10-21",
+          score: 0.03343,
+        },
+        {
+          id: 6,
+          name: "John",
+          age: 20,
+          createdAt: "2011-10-31",
+          score: 0.03343,
+        },
       ],
     };
   },
   methods: {
-    toggleErrors (form) {
+    toggleErrors(form) {
       this.formErrors[form] = !this.formErrors[form];
     },
-    openModal (modal) {
+    openModal(modal) {
       this.$set(this.showModal, modal, true);
     },
   },
 };
 </script>
 <style lang="scss">
-  @import '@phila/phila-ui/src/assets/styles/scss/vendors/vue-good-table.scss';
-  .back-to {
-    display: none;
-  }
-
+@import "@phila/phila-ui/src/assets/styles/scss/vendors/vue-good-table.scss";
+.back-to {
+  display: none;
+}
 </style>

@@ -88,7 +88,6 @@
 </template>
 
 <script>
-import Vue from 'vue';
 import Axios from 'axios';
 
 import { component as VueCodeHighlight } from 'vue-code-highlight';
