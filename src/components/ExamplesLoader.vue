@@ -165,7 +165,7 @@ export default {
         });
         this.code = file;
       } catch (error) {
-        console.error(error);
+        // console.error(error);
       }
     }
 
@@ -179,7 +179,7 @@ export default {
           button.click();
         }
 
-        button.addEventListener('click', function (event) {
+        button.addEventListener('click', function () {
           allButtons.forEach(button => {
             if (button !== this) {
               button.classList.remove('is-active');
