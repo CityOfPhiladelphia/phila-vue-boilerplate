@@ -73,12 +73,11 @@
   </div>
 </template>
 <script>
-import Vue from 'vue';
-import * as PhilaUI from '@phila/phila-ui';
 import VueI18n from "vue-i18n";
+import Vue from 'vue';
+import { AppHeader, AppFooter, MobileNav, TabsNav, DropdownNav, LangSelector } from '@phila/phila-ui';
 
 Vue.use(VueI18n);
-Vue.use(PhilaUI);
 
 const i18n = new VueI18n({
   locale: "en-US",
@@ -108,6 +107,9 @@ const i18n = new VueI18n({
 
 export default {
   i18n,
+  components: {
+    AppHeader, AppFooter, MobileNav, TabsNav, DropdownNav, LangSelector,
+  },
   data () {
     return {
       appHeader: {

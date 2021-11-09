@@ -1,6 +1,7 @@
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
+  transpileDependencies: [ '@phila/phila-ui' ],
   css: {
     loaderOptions: {
       sass: {

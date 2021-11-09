@@ -885,41 +885,8 @@
   </div>
 </template>
 <script>
-import Vue from 'vue';
-import * as PhilaUI from '@phila/phila-ui';
-import VueI18n from "vue-i18n";
-
-Vue.use(VueI18n);
-Vue.use(PhilaUI);
-
-const i18n = new VueI18n({
-  locale: "en-US",
-  messages: {
-    "en-US": {
-      message: {
-        hello: 'Hello',
-      },
-    },
-    "es": {
-      message: {
-        hello: "Hola",
-      },
-    },
-    "it": {
-      message: {
-        hello: "Ciao",
-      },
-    },
-    "pt-BR": {
-      message: {
-        hello: "Olá",
-      },
-    },
-  },
-});
 
 export default {
-  i18n,
   components: {},
   data () {
     return {

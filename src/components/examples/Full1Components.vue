@@ -192,7 +192,7 @@
           <tooltip message="My tooltip message" />
         </p>
       </div>
-      <div class="column is-full">
+      <!-- <div class="column is-full">
         <hr>
         <code>Modal window</code>
         <hr>
@@ -257,52 +257,23 @@
           :rows="tRows"
           style-class="table"
         />
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
 <script>
 import Vue from 'vue';
 import * as PhilaUI from '@phila/phila-ui';
-import VueI18n from "vue-i18n";
-import { VueFinalModal } from 'vue-final-modal';
-import 'vue-good-table/dist/vue-good-table.css';
-import { VueGoodTable } from 'vue-good-table';
+// import { VueFinalModal } from 'vue-final-modal';
+// import 'vue-good-table/dist/vue-good-table.css';
+// import { VueGoodTable } from 'vue-good-table';
 
-Vue.use(VueI18n);
 Vue.use(PhilaUI);
 
-const i18n = new VueI18n({
-  locale: "en-US",
-  messages: {
-    "en-US": {
-      message: {
-        hello: 'Hello',
-      },
-    },
-    "es": {
-      message: {
-        hello: "Hola",
-      },
-    },
-    "it": {
-      message: {
-        hello: "Ciao",
-      },
-    },
-    "pt-BR": {
-      message: {
-        hello: "Olá",
-      },
-    },
-  },
-});
-
 export default {
-  i18n,
   components: {
-    VueFinalModal,
-    VueGoodTable,
+    // VueFinalModal,
+    // VueGoodTable,
   },
   data () {
     return {
