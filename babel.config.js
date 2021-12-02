@@ -9,7 +9,6 @@ module.exports = {
     [
       '@vue/cli-plugin-babel/preset',
       {
-        debug: true,
         useBuiltIns: 'usage',
         polyfills: [ 'es.array.iterator', 'es.promise', 'es.object.assign', 'es.promise.finally', 'es.array.find-index' ],
       },

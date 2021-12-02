@@ -1,10 +1,8 @@
 <template>
   <div>
-    <app-header v-bind="appHeader">
+    <app-header v-bind="appHeader" :is-sticky="false">
       <tabs-nav slot="tabs-nav">
-        <router-link :to="{ name: 'Full1Styles' }">
-          Styles
-        </router-link>
+        <router-link :to="{ name: 'Full1Styles' }"> Styles </router-link>
         <router-link :to="{ name: 'Full1Components' }">
           Components
         </router-link>
@@ -23,10 +21,7 @@
           </li>
         </ul>
       </dropdown-nav>
-      <lang-selector
-        slot="lang-selector-nav"
-        :languages="languages"
-      />
+      <lang-selector slot="lang-selector-nav" :languages="languages" />
       <mobile-nav slot="mobile-nav">
         <ul>
           <li>
@@ -45,10 +40,7 @@
                 <a href="#"> Link 3.2</a>
               </li>
               <li>
-                <a
-                  href="#"
-                  class=""
-                > Link 3.3</a>
+                <a href="#" class=""> Link 3.3</a>
                 <ul>
                   <li>
                     <a href="#"> Link 3.3.1</a>
@@ -66,16 +58,20 @@
     <main class="container">
       <router-view />
     </main>
-    <app-footer
-      :links="footerLinks"
-      :is-sticky="true"
-    />
+    <app-footer :links="footerLinks" :is-sticky="false" />
   </div>
 </template>
 <script>
 import VueI18n from "vue-i18n";
-import Vue from 'vue';
-import { AppHeader, AppFooter, MobileNav, TabsNav, DropdownNav, LangSelector } from '@phila/phila-ui';
+import Vue from "vue";
+import {
+  AppHeader,
+  AppFooter,
+  MobileNav,
+  TabsNav,
+  DropdownNav,
+  LangSelector,
+} from "@phila/phila-ui";
 
 Vue.use(VueI18n);
 
@@ -84,15 +80,15 @@ const i18n = new VueI18n({
   messages: {
     "en-US": {
       message: {
-        hello: 'Hello',
+        hello: "Hello",
       },
     },
-    "es": {
+    es: {
       message: {
         hello: "Hola",
       },
     },
-    "it": {
+    it: {
       message: {
         hello: "Ciao",
       },
@@ -108,52 +104,49 @@ const i18n = new VueI18n({
 export default {
   i18n,
   components: {
-    AppHeader, AppFooter, MobileNav, TabsNav, DropdownNav, LangSelector,
+    AppHeader,
+    AppFooter,
+    MobileNav,
+    TabsNav,
+    DropdownNav,
+    LangSelector,
   },
-  data () {
+  data() {
     return {
       appHeader: {
         appTitle: "My First App",
         appSubtitle: "My app description",
         brandingImage: {
-          src: require('../../assets/sample-logo.png'),
-          width: '200px',
-          height: 'auto',
+          src: require("../../assets/sample-logo.png"),
+          width: "200px",
+          height: "auto",
           alt: "My branding image",
         },
       },
       languages: [
         {
-          language: 'en-US',
-          title: 'English',
+          language: "en-US",
+          title: "English",
         },
         {
-          language: 'es',
-          title: 'Spanish',
+          language: "es",
+          title: "Spanish",
         },
         {
-          language: 'it',
-          title: 'Italian',
+          language: "it",
+          title: "Italian",
         },
         {
-          language: 'pt-BR',
-          title: 'Portuguese (Brazil)',
+          language: "pt-BR",
+          title: "Portuguese (Brazil)",
         },
       ],
       textboxValue: "",
       phoneValue: "",
       checkboxValue: [],
-      checkboxes: [
-        "Checkbox 1",
-        "Checkbox 2",
-        "Checkbox 3",
-      ],
+      checkboxes: [ "Checkbox 1", "Checkbox 2", "Checkbox 3" ],
       radioValue: "",
-      radioButtons: [
-        "Radio button 1",
-        "Radio button 2",
-        "Radio button 3",
-      ],
+      radioButtons: [ "Radio button 1", "Radio button 2", "Radio button 3" ],
       dropdownValue: "",
       dropdownOptions: [
         "Dropdown Option 1",
@@ -180,15 +173,14 @@ export default {
     };
   },
   methods: {
-    toggleErrors (form) {
+    toggleErrors(form) {
       this.formErrors[form] = !this.formErrors[form];
     },
   },
 };
 </script>
 <style lang="scss">
- .back-to {
-    display: none;
-  }
-
+.back-to {
+  display: none;
+}
 </style>
